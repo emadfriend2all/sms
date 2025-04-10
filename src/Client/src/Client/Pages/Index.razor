@@ -1,0 +1,46 @@
+﻿@page "/home"
+@page "/"
+@using Showmatics.Shared.Multitenancy;
+
+@inject IStringLocalizer<Index> L
+
+<MudContainer>
+    <MudGrid>
+        <MudItem xs="12" sm="12" md="12">
+            <div class="d-flex justify-center mt-4">
+                 <img src="@TenantInfo.LogoUrl" Style="max-height:150px" />
+            </div>
+        </MudItem>
+        <MudItem xs="12" sm="12" md="12">
+            <MudText Align="Align.Center" Typo="Typo.h5" Class="smaller">@L["Showmatics"]</MudText>
+            <MudText Align="Align.Center" Typo="Typo.h4">@TenantInfo.Name</MudText>
+
+        </MudItem>
+        <MudItem xs="12" sm="12" md="12">
+            <MudText Align="Align.Center">
+                @TenantInfo.Address
+            </MudText>
+            <MudText Align="Align.Center">
+                Developed by <MudLink Href="https://www.showmatics.co.za" Target="_blank">Showmatics v1.0</MudLink>
+            </MudText>
+        </MudItem>
+    </MudGrid>
+</MudContainer>
+
+@code {
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; } = default!;
+    protected TenantBasicInfoDto TenantInfo { get; set; } = default!;
+    public IEnumerable<Claim>? Claims { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthState;
+        Claims = authState.User.Claims;
+
+        if ((await AuthState).User is { } user)
+        {
+            TenantInfo = user.GetCurrentUserTenantInfo() ?? new TenantBasicInfoDto();
+        }
+    }
+}

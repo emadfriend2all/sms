@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>Showmatics.Blazor.Client</RootNamespace>
+        <AssemblyName>Showmatics.Blazor.Client</AssemblyName>
+        <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+        <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <Optimize>True</Optimize>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <Optimize>False</Optimize>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Components\Common\DynamicField.razor.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Resources\ar-SA.json" />
+      <Content Remove="Resources\ar.json" />
+      <Content Remove="Resources\en.json" />
+      <Content Remove="wwwroot\favicon.ico" />
+      <Content Remove="wwwroot\showmatics-logo.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="wwwroot\favicon.ico" />
+      <EmbeddedResource Include="wwwroot\showmatics-logo.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BlazorGoogleMaps" Version="3.3.2" />
+        <PackageReference Include="DynamicExpresso.Core" Version="2.16.1" />
+        <PackageReference Include="Mapster" Version="7.3.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.23" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.23" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
+        <PackageReference Include="MudBlazor" Version="6.10.0" />
+        <PackageReference Include="Z.Blazor.Diagrams" Version="3.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Client.Infrastructure\Client.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- Avoid trimming of the Msal library.
+             There's something too much trimmed from Msal in the publish step. Then, after logging in,
+             the user gets redirected to authentication/login-failed with no error message. -->
+        <TrimmerRootAssembly Include="Microsoft.Authentication.WebAssembly.Msal" />
+    </ItemGroup>
+</Project>

@@ -1,0 +1,140 @@
+﻿@inherits MudDialog
+<style>
+    .mud-dialog .mud-dialog-title {
+        z-index: 1;
+        flex: 0 0 auto;
+        margin: 0;
+        padding: 0px 0px;
+        border-top-left-radius: var(--mud-default-borderradius);
+        border-top-right-radius: var(--mud-default-borderradius);
+        /* background-color: #f3f1f1; */
+    }
+</style>
+<MudDialog>
+    <TitleContent>
+
+        <MudToolBar Dense="true">
+            <MudIcon Icon="@TitleIcon" Class="me-3 mb-n1" />
+            <MudText Typo="Typo.body1"> @Title</MudText>
+            @TitleContent
+            <MudSpacer />
+            <MudIconButton Icon="@GetIconForMode()" OnClick="ToggleDisplayMode" Class="cursor-pointer" />
+            <MudIconButton Icon="@Icons.Material.Filled.Close" OnClick="Cancel" Class="cursor-pointer" />
+        </MudToolBar>
+        @if (_isLoading)
+        {
+            <MudProgressLinear Indeterminate="true" Color="Color.Primary"></MudProgressLinear>
+        }
+    </TitleContent>
+    <DialogContent>
+        @DialogContent
+    </DialogContent>
+    <DialogActions>
+        @DialogActions
+    </DialogActions>
+</MudDialog>
+@code {
+    [Parameter]
+    public string Title { get; set; } = default!;
+    [Parameter]
+    public string TitleIcon { get; set; } = default!;
+    [Parameter]
+    public bool Loading { get; set; }
+    [Parameter]
+    public EventCallback<string> TitleChanged { get; set; }
+    [Parameter]
+    public EventCallback<bool> LoadingChanged { get; set; }
+    [CascadingParameter]
+    private MudDialogInstance MudDialog { get; set; } = default!;
+
+
+    private RenderFragment? savedDialogContent;
+    private bool isFullScreen = false;
+    private bool _isLoading = false;
+    private string title = default!;
+
+    void Submit() => MudDialog.Close(DialogResult.Ok(true));
+    void Cancel() => MudDialog.Cancel();
+    private DisplayMode currentMode = DisplayMode.FitContent;
+    protected override void OnParametersSet()
+    {
+        if (Title != title)
+        {
+            title = Title;
+            ChangeTitle(title);
+        }
+
+        if (Loading != _isLoading)
+        {
+            _isLoading = Loading;
+            StateHasChanged();
+        }
+    }
+    protected override void OnInitialized()
+    {
+        SwitchFitContentMode();
+    }
+    private string GetIconForMode()
+    {
+        return currentMode switch
+        {
+            DisplayMode.FullScreen => Icons.Material.Filled.FullscreenExit,
+            DisplayMode.FullWidth => Icons.Material.Filled.FitScreen,
+            DisplayMode.FitContent => Icons.Material.Filled.Fullscreen,
+            _ => Icons.Material.Filled.Fullscreen,
+        };
+    }
+
+    private void ToggleDisplayMode()
+    {
+        switch (currentMode)
+        {
+            case DisplayMode.FullScreen:
+                SwitchFitContentMode();
+                break;
+            case DisplayMode.FullWidth:
+                SwitchFullScreenMode();
+                break;
+            case DisplayMode.FitContent:
+                //SwitchFullWidthMode();
+                SwitchFullScreenMode();
+                break;
+        }
+    }
+
+    private void SwitchFullScreenMode()
+    {
+        currentMode = DisplayMode.FullScreen;
+        MudDialog.Options.FullScreen = true;
+        MudDialog.Options.FullWidth = true;
+        MudDialog.SetOptions(MudDialog.Options);
+    }
+    private void SwitchFullWidthMode()
+    {
+        currentMode = DisplayMode.FullWidth;
+        MudDialog.Options.MaxWidth = MaxWidth.Large;
+        MudDialog.Options.FullWidth = true;
+        MudDialog.Options.FullScreen = false;
+        MudDialog.SetOptions(MudDialog.Options);
+    }
+    private void SwitchFitContentMode()
+    {
+        currentMode = DisplayMode.FitContent;
+        MudDialog.Options.MaxWidth = MaxWidth.Medium;
+        MudDialog.Options.FullWidth = true;
+        MudDialog.Options.FullScreen = false;
+        MudDialog.SetOptions(MudDialog.Options);
+    }
+
+    public void ChangeTitle(string title)
+    {
+        MudDialog.SetTitle(title);
+    }
+
+    private enum DisplayMode
+    {
+        FitContent,
+        FullWidth,
+        FullScreen,
+    }
+}

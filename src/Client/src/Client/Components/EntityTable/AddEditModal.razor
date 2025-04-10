@@ -1,0 +1,41 @@
+﻿@typeparam TRequest
+
+@inject IStringLocalizer<SharedResource> L
+
+<EditForm Model="@RequestModel" OnValidSubmit="SaveAsync">
+    <Showmatics.Blazor.Client.Components.Dialogs.AppDialog Title="@(IsCreate?$"{L["Create"]} {L[EntityName]}":$"{L["Edit"]} {L[EntityName]}")"
+                                                           TitleIcon="@(IsCreate?@Icons.Material.Filled.Add:@Icons.Material.Filled.Update)" Loading="Loading">
+
+        <DialogContent>
+            <DataAnnotationsValidator />
+            <CustomValidation @ref="_customValidation" />
+            <MudGrid Spacing="1">
+                @if (!IsCreate)
+                {
+                    <MudItem xs="12" md="6">
+                        <MudTextField Value="Id" ReadOnly DisableUnderLine Label="@L[$"Id"]" />
+                     </MudItem>
+                }
+                @EditFormContent(RequestModel)
+
+            </MudGrid>
+        </DialogContent>
+
+        <DialogActions>
+            <MudButton DisableElevation Variant="Variant.Filled" OnClick="Cancel" StartIcon="@Icons.Material.Filled.Cancel">@L["Cancel"]</MudButton>
+             @if (IsCreate)
+            {
+                <MudButton DisableElevation Variant="Variant.Filled" ButtonType="ButtonType.Submit" Color="Color.Success" StartIcon="@Icons.Material.Filled.Save">
+                     @L["Save"]
+                 </MudButton>
+            }
+            else
+            {
+                <MudButton DisableElevation Variant="Variant.Filled" ButtonType="ButtonType.Submit" Color="Color.Secondary" StartIcon="@Icons.Material.Filled.Update">
+                     @L["Update"]
+                 </MudButton>
+            }
+        </DialogActions>
+
+    </Showmatics.Blazor.Client.Components.Dialogs.AppDialog>
+</EditForm>

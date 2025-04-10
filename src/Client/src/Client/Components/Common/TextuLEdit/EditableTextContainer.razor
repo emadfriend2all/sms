@@ -1,0 +1,46 @@
+﻿@* @page "/simpletxtfield" *@
+@*
+<link href="css/editable_text.css" rel="stylesheet" /> *@
+
+@if (TableRow)
+{
+    <tr>
+        <td class="d-inline-flex pt-1">
+            @if (string.IsNullOrEmpty(Icon) == false)
+            {
+                <MudIcon Icon="@Icon" Class="me-1" Size="Size.Small" Style="font-size: 16px;" />
+            }
+            <MudText Typo="Typo.caption" Class="d-flex align-center me-1" Style="min-width: max-content;">@Label</MudText>
+        </td>
+        <td class="editable-container">
+            @ChildContent
+        </td>
+    </tr>
+}
+else
+{
+    <MudStack Row="true" Spacing="1">
+        @if (string.IsNullOrEmpty(Icon) == false)
+        {
+            <MudIcon Icon="@Icon" Size="Size.Small" Style="font-size: 16px;"  Class="ms-1 mt-1"/>
+        }
+        <MudText Typo="Typo.caption " Class="d-flex align-center me-1" Style="min-width: max-content;">@Label</MudText>
+        <div class="editable-container" style="min-width: min-content;">
+            @ChildContent
+        </div>
+    </MudStack>
+}
+
+@code {
+    [Parameter]
+    public string Label { get; set; } = default!;
+    [Parameter]
+    public string Icon { get; set; } = default!;
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter]
+    public bool TableRow { get; set; } = false!;
+    protected override void OnInitialized()
+    {
+    }
+
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Showmatics Service Management",
+  "short_name": "Showmatics SM",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3eaf7c",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "showmatics-logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "showmatics-logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}

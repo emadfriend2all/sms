@@ -1,0 +1,63 @@
+﻿@using Showmatics.Blazor.Client.Pages.Identity.Roles;
+@inject IAuthenticationService Authentication
+@inject IStringLocalizer<Tenants> L
+@inject IStringLocalizer<RolePermissions> PL
+<MudGrid Spacing="1">
+    <MudItem xs="12" md="6">
+        <FSHTextField T="string" For="@(() => Request.Id)" @bind-Value="Request.Id" Label="@L["Key"]" />
+    </MudItem>
+    <MudItem xs="12" md="6">
+        <FSHTextField T="string" For="@(() => Request.Name)" @bind-Value="Request.Name" Label="@L["Name"]" />
+    </MudItem>
+    <MudItem xs="12" md="6">
+        <FSHTextField T="string" For="@(() => Request.Address)" @bind-Value="Request.Address" Label="@L["Address"]" />
+    </MudItem>
+    <MudItem xs="12" md="6">
+        <FSHTextField T="string" For="@(() => Request.AdminEmail)" @bind-Value="Request.AdminEmail"
+                      Label="@L["Admin Email"]" />
+    </MudItem>
+    <MudItem xs="12" md="6">
+        <FSHTextField T="string" For="@(() => Request.BankName)" @bind-Value="Request.BankName" Label="@L["BankName"]" />
+    </MudItem>
+    <MudItem xs="12" md="6">
+        <FSHTextField T="string" For="@(() => Request.BankAccount)" @bind-Value="Request.BankAccount" Label="@L["BankAccount"]" />
+    </MudItem>
+    <MudItem xs="12" md="6">
+        <MudColorPicker @bind-Text="Request.PrimaryColor" Margin="Margin.Dense" Style="@($"color: {Request.PrimaryColor??""};")" Label="@L["PrimaryColor"]" Variant="Variant.Outlined" />
+    </MudItem>
+    <MudItem xs="12" md="6">
+        <MudColorPicker @bind-Text="Request.SecondaryColor" Margin="Margin.Dense" Style="@($"color: {Request.SecondaryColor??""};")" Label="@L["SecondaryColor"]" Variant="Variant.Outlined" />
+    </MudItem>
+
+    <MudItem xs="12" md="12">
+        <FSHTextField T="string" For="@(() => Request.LogoUrl)" @bind-Value="Request.LogoUrl" Label="@L["LogoUrl"]" />
+    </MudItem>
+    <MudItem xs="12" md="12">
+        <FSHTextField T="string" For="@(() => Request.HeaderUrl)" @bind-Value="Request.HeaderUrl" Label="@L["HeaderUrl"]" />
+    </MudItem>
+    <MudItem xs="12" md="12">
+        <FSHTextField T="string" For="@(() => Request.FooterUrl)" @bind-Value="Request.FooterUrl" Label="@L["FooterUrl"]" />
+    </MudItem>
+
+    <MudItem xs="12" md="12">
+        <FSHTextField T="string" For="@(() => Request.FooterUrl)" @bind-Value="Request.FooterUrl" Label="@L["FooterUrl"]" />
+    </MudItem>
+
+    <MudItem xs="12" md="12">
+        <MudSelect T="string" Label="@L["Modules"]" Lines="3" MultiSelection="true" @bind-Value="@SelectedModules" @bind-SelectedValues="Modules"
+                   Margin="Margin.Dense" Variant="Variant.Outlined">
+            @foreach (var appModuleName in FSHPermissions.All.Select(x => x.Resource).Distinct())
+            {
+                <MudSelectItem T="string" Value="@(appModuleName)">@PL[appModuleName]</MudSelectItem>
+            }
+        </MudSelect>
+    </MudItem>
+
+    @if (Authentication.ProviderType == AuthProvider.AzureAd)
+    {
+        <MudItem xs="12" md="6">
+            <FSHTextField T="string" For="@(() => Request.Issuer)" @bind-Value="Request.Issuer" Label="@L["Issuer"]" />
+        </MudItem>
+    }
+
+</MudGrid>

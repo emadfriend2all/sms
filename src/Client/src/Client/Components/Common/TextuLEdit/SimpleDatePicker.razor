@@ -1,0 +1,17 @@
+﻿@inherits MudDatePicker
+@* @page "/simpletxtfield" *@
+<link href="css/editable_text.css" rel="stylesheet" />
+<tr>
+    <td><MudText Typo="Typo.caption" Class="d-flex align-center me-1" Style="padding-top: 6px;">@Label</MudText></td>
+    <td><MudDatePicker Class="editable-textbox" @attributes="UserAttributes" Placeholder="@Label" Label="" DisableUnderLine="true" /></td>
+</tr>
+
+@code {
+    [Parameter]
+    public string TitleIcon { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+    }
+
+}

@@ -1,0 +1,48 @@
+﻿@inject IStringLocalizer<NavMenu> L
+
+<PersonCard Style="background-color: var(--mud-palette-drawer-background);color: var(--mud-palette-drawer-text); margin-bottom:0px!important" />
+<MudNavMenu>
+    <MudNavLink Href="/" Match="NavLinkMatch.All" Icon="@Icons.Material.Outlined.Home">@L["Home"]</MudNavLink>
+
+    @if (_canViewDashboard)
+    {
+        <MudNavLink Href="/dashboard" Match="NavLinkMatch.All" Icon="@Icons.Material.Outlined.Dashboard">@L["Dashboard"]</MudNavLink>
+    }
+    @if (_canViewItems || _canViewBrands || _canViewCustomers)
+    {
+        <MudText Typo="Typo.subtitle2" Color="Color.Primary" Class="ms-4 my-3"><strong>@L["Management"]</strong></MudText>
+        <MudNavGroup Title="@L["Sales"]" Expanded="false" Icon="@Icons.Material.Outlined.ArrowUpward">
+            @if (_canViewCustomers)
+            {
+                <MudNavLink Href="/catalog/customers" Icon="@Icons.Material.Outlined.SensorOccupied" Class="fsh-nav-child">
+                    @L["Customers"]
+                </MudNavLink>
+            }
+        </MudNavGroup>
+        
+    }
+    <MudText Typo="Typo.subtitle2" Color="Color.Primary" Class="ms-4 my-3"><strong>@L["Personal"]</strong></MudText>
+    <MudNavLink Href="/account" Icon="@Icons.Material.Outlined.ManageAccounts">@L["Account"]</MudNavLink>
+    <MudNavLink Href="/audit-logs" Icon="@Icons.Material.Outlined.SecurityUpdateGood">@L["Logs"]</MudNavLink>
+    @if (CanViewAdministrationGroup)
+    {
+        <MudText Typo="Typo.subtitle2" Color="Color.Primary" Class="ms-4 my-3"><strong>@L["Administration"]</strong></MudText>
+        @if (_canViewUsers)
+        {
+            <MudNavLink Match="NavLinkMatch.Prefix" Href="/users" Icon="@Icons.Material.Outlined.PeopleAlt">@L["Users"]</MudNavLink>
+        }
+        @if (_canViewRoles)
+        {
+            <MudNavLink Href="/roles" Icon="@Icons.Material.Outlined.Fingerprint">@L["Roles"]</MudNavLink>
+        }
+        @if (_canViewTenants)
+        {
+            <MudNavLink Href="/tenants" Icon="@Icons.Material.Outlined.GroupWork" Disabled="!_canViewTenants">@L["Tenants"]</MudNavLink>
+        }
+    }
+    @if (_canViewHangfire)
+    {
+        <MudNavLink Href="@_hangfireUrl" Match="NavLinkMatch.All" Target="_blank" Icon="@Icons.Material.Outlined.Light">@L["Hangfire"]</MudNavLink>
+    }
+
+</MudNavMenu>

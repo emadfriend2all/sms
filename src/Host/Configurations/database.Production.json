@@ -1,0 +1,6 @@
+{
+  "DatabaseSettings": {
+    "DBProvider": "mssql",
+    "ConnectionString": "Data Source=SQL5110.site4now.net;Initial Catalog=db_a7ef86_showmatics;User Id=db_a7ef86_showmatics_admin;Password=123Welcome;MultipleActiveResultSets=True;TrustServerCertificate=true"
+  }
+}

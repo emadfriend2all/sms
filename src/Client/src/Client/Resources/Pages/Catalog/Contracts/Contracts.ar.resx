@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>أجراءات</value>
+  </data>
+  <data name="ActiveContracts" xml:space="preserve">
+    <value>العقود النشطة</value>
+  </data>
+  <data name="Add Current Term" xml:space="preserve">
+    <value>إضافة بند حالي</value>
+  </data>
+  <data name="Add Implementation Plan" xml:space="preserve">
+    <value>إضافة خطة التنفيذ</value>
+  </data>
+  <data name="Add Installment Plan" xml:space="preserve">
+    <value>إضافة دفعة</value>
+  </data>
+  <data name="Add New Term" xml:space="preserve">
+    <value>إضافة بند جديد</value>
+  </data>
+  <data name="Add Item" xml:space="preserve">
+    <value>إضافة منتج</value>
+  </data>
+  <data name="Add Service" xml:space="preserve">
+    <value>إضافة خدمة </value>
+  </data>
+  <data name="Add Term" xml:space="preserve">
+    <value>إضافة بند</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>السعر</value>
+  </data>
+  <data name="Attachments" xml:space="preserve">
+    <value>المرفقات</value>
+  </data>
+  <data name="Basic Info" xml:space="preserve">
+    <value>البيانات الأساسية</value>
+  </data>
+  <data name="Batch" xml:space="preserve">
+    <value>الدفعة {0}</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>المنطقة</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>إستعادة</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>تعليق</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>العقد</value>
+  </data>
+  <data name="Contract Id" xml:space="preserve">
+    <value>الرقم</value>
+  </data>
+  <data name="ContractAboutToExpire" xml:space="preserve">
+    <value>العقد علي وشك الإنتهاء</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>مرفق</value>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>المرفقات</value>
+  </data>
+  <data name="ContractIsExpired" xml:space="preserve">
+    <value>إنتهت فترة العقد</value>
+  </data>
+  <data name="ContractRenewal" xml:space="preserve">
+    <value>تجديد</value>
+  </data>
+  <data name="ContractRenewals" xml:space="preserve">
+    <value>التجديدات</value>
+  </data>
+  <data name="Contracts" xml:space="preserve">
+    <value>العقود</value>
+  </data>
+  <data name="ContractType" xml:space="preserve">
+    <value>نوع العقد</value>
+  </data>
+  <data name="ConvertToContract" xml:space="preserve">
+    <value>تحويل لعقد</value>
+  </data>
+  <data name="CurrentPrice" xml:space="preserve">
+    <value>سعر البيع</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>إسم العميل</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاريخ الإنشاء</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>الأيام</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حزف الملف</value>
+  </data>
+  <data name="Delete Content" xml:space="preserve">
+    <value>حذف العقد</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>تحميل </value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>تاريخ الإنتهاء</value>
+  </data>
+  <data name="EveryNoOfDays" xml:space="preserve">
+    <value>متابعة كل .. يوم</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>تاريخ الإنتهاء</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>تصدير</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>إسم الملف</value>
+  </data>
+  <data name="Fixes" xml:space="preserve">
+    <value>الأعطال</value>
+  </data>
+  <data name="Followups" xml:space="preserve">
+    <value>الزيارات</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>رقم الملف</value>
+  </data>
+  <data name="Implementation" xml:space="preserve">
+    <value>خطة التنفيذ</value>
+  </data>
+  <data name="Implementations" xml:space="preserve">
+    <value>خطة التنفيذ</value>
+  </data>
+  <data name="InstallmentName" xml:space="preserve">
+    <value>طريقة الدفع</value>
+  </data>
+  <data name="Installments" xml:space="preserve">
+    <value>الدفعات</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>الفاتورة</value>
+  </data>
+  <data name="InWarranty" xml:space="preserve">
+    <value>في الضمان</value>
+  </data>
+  <data name="IsContractual" xml:space="preserve">
+    <value>إلتزام قانوني</value>
+  </data>
+  <data name="Manage Contracts." xml:space="preserve">
+    <value>إدارة العقود</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>إسم العقد</value>
+  </data>
+  <data name="NewPrice" xml:space="preserve">
+    <value>السعر الجديد</value>
+  </data>
+  <data name="No Allowed Actions" xml:space="preserve">
+    <value>لا توجد إجراءات مسموح بها</value>
+  </data>
+  <data name="NoOfInstallments" xml:space="preserve">
+    <value>عدد الدفعات</value>
+  </data>
+  <data name="NoOfItems" xml:space="preserve">
+    <value>العدد</value>
+  </data>
+  <data name="NoOfRemainingServicesByNow" xml:space="preserve">
+    <value>المتابعات المتبقية</value>
+  </data>
+  <data name="NoOfServicesShouldBeDoneByNow" xml:space="preserve">
+    <value>المتابعات المفترضة</value>
+  </data>
+  <data name="OfferAboutToExpire" xml:space="preserve">
+    <value>العرض علي وشك الإنتهاء</value>
+  </data>
+  <data name="OfferExpiryDate" xml:space="preserve">
+    <value>تاريخ إنتهاء العرض</value>
+  </data>
+  <data name="OfferIsExpired" xml:space="preserve">
+    <value>إنتهت فترة العرض</value>
+  </data>
+  <data name="Offers" xml:space="preserve">
+    <value>عروض الأسعار</value>
+  </data>
+  <data name="OldPrice" xml:space="preserve">
+    <value>السعر الحالي</value>
+  </data>
+  <data name="PassedDays" xml:space="preserve">
+    <value>مضي منه</value>
+  </data>
+  <data name="Percentage" xml:space="preserve">
+    <value>النسبة</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>رقم العميل</value>
+  </data>
+  <data name="PlanDate" xml:space="preserve">
+    <value>تاريخ الدفع</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>القيمة</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>طباعة العقد</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>المنتج</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>المنتجات</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>المشروع</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>الكمية</value>
+  </data>
+  <data name="Reload" xml:space="preserve">
+    <value>إعادة تحميل</value>
+  </data>
+  <data name="RemainingDays" xml:space="preserve">
+    <value>تبقي له</value>
+  </data>
+  <data name="RenewalId" xml:space="preserve">
+    <value>رقم التجديد</value>
+  </data>
+  <data name="Renewals" xml:space="preserve">
+    <value>التجديدات</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>الخدمة</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>إضافات</value>
+  </data>
+  <data name="Specifications" xml:space="preserve">
+    <value>المواصفات</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>تاريخ البداية</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="Striped" xml:space="preserve">
+    <value>مخطط</value>
+  </data>
+  <data name="SubContract" xml:space="preserve">
+    <value>المقايسات</value>
+  </data>
+  <data name="Term" xml:space="preserve">
+    <value>البند</value>
+  </data>
+  <data name="Terms" xml:space="preserve">
+    <value>بنود الإتفاقية</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>المبلغ الكلي</value>
+  </data>
+  <data name="TotalServices" xml:space="preserve">
+    <value>عدد المتابعات</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>نوع العقد</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>سعر الوحدة</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>رفع الملف</value>
+  </data>
+  <data name="WarrantyDays" xml:space="preserve">
+    <value>فترة الضمان</value>
+  </data>
+  <data name="WorkGroup" xml:space="preserve">
+    <value>فريق العمل</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>الرقم</value>
+  </data>
+  <data name="Maintainance" xml:space="preserve">
+    <value>الصيانة</value>
+  </data>
+  <data name="Manage Maintainance." xml:space="preserve">
+    <value>إدارة الصيانة</value>
+  </data>
+  <data name="IsOffer" xml:space="preserve">
+    <value>عرض سعر</value>
+  </data>
+  <data name="contract converted successfully." xml:space="preserve">
+    <value>تم التحويل لعقد بنجاح</value>
+  </data>
+  <data name="Contract created Successfully." xml:space="preserve">
+    <value>تمت الإضافة بنجاح</value>
+  </data>
+  <data name="Contract updated Successfully." xml:space="preserve">
+    <value>تم التعديل بنجاح</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>الموقع</value>
+  </data>
+  <data name="TotalAfterDiscount" xml:space="preserve">
+    <value>السعر بعد التخفيض</value>
+  </data>
+  <data name="TotalVatInc" xml:space="preserve">
+    <value>السعر شامل الضريبة</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>تخفيض</value>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>الرقم المتستسل</value>
+  </data>
+  <data name="DiscountPercentage" xml:space="preserve">
+    <value>نسبة الخصم</value>
+  </data>
+  <data name="Add Address" xml:space="preserve">
+    <value>إضافة عنوان</value>
+  </data>
+  <data name="Add Contact" xml:space="preserve">
+    <value>إضافة جهة إتصال</value>
+  </data>
+  <data name="CreateSubContract" xml:space="preserve">
+    <value>إضافة مقايسة</value>
+  </data>
+  <data name="ReferenceId" xml:space="preserve">
+    <value>يتبع للعقد</value>
+  </data>
+  <data name="Field" xml:space="preserve">
+    <value>الحقل</value>
+  </data>
+  <data name="Fields" xml:space="preserve">
+    <value>الحقول</value>
+  </data>
+  <data name="PrintLabels" xml:space="preserve">
+    <value>طباعة الإستيكرات</value>
+  </data>
+  <data name="CurrentStage" xml:space="preserve">
+    <value>المرحلة</value>
+  </data>
+</root>

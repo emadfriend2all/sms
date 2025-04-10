@@ -1,0 +1,1 @@
+dotnet ef migrations add 'init migration' --project .././Migrators/Migrators.MSSQL/ --context ApplicationDbContext -o Migrations/Application

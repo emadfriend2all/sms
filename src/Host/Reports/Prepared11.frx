@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/26/2023 20:26:06" ReportInfo.Modified="12/26/2023 20:26:06" ReportInfo.CreatorVersion="2023.3.3.0">
+  <Styles>
+    <Style Name="Title" Font="Calibri, 12pt, style=Bold"/>
+    <Style Name="Subtitle" Font="Calibri, 11pt, style=Bold"/>
+    <Style Name="Paragraph" Font="Calibri, 11pt"/>
+    <Style Name="TableCellNormal" Border.Lines="All" Border.Color="LightGray" Font="Calibri, 11pt"/>
+    <Style Name="TableCellBold" Border.Lines="All" Border.Color="LightGray" Font="Calibri, 11pt, style=Bold"/>
+    <Style Name="TableCellEvenNormal" Fill.Color="WhiteSmoke" Font="Calibri, 11pt"/>
+    <Style Name="TableCellEvenBold" Fill.Color="WhiteSmoke" Font="Calibri, 11pt, style=Bold"/>
+  </Styles>
+  <Dictionary>
+    <BusinessObjectDataSource Name="contract" ReferenceName="contract" DataType="System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]" Enabled="true">
+      <Column Name="Id" DataType="System.Int64"/>
+      <Column Name="Name" DataType="System.String"/>
+      <Column Name="Crontab" DataType="System.String"/>
+      <Column Name="NoOfInstallments" DataType="System.Int32"/>
+      <Column Name="Total" DataType="System.Decimal"/>
+      <Column Name="TotalVatInc" DataType="System.Decimal"/>
+      <Column Name="TotalAfterDiscount" DataType="System.Decimal"/>
+      <Column Name="DiscountPercentage" DataType="System.Int32"/>
+      <Column Name="TypeId" DataType="System.Int32"/>
+      <Column Name="NoOfItems" DataType="System.Int32"/>
+      <Column Name="ProjectId" DataType="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+      <Column Name="CustomerId" DataType="System.Nullable`1[[System.Int64, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+      <Column Name="AddressId" DataType="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+      <Column Name="SerialNumber" DataType="System.String"/>
+      <Column Name="ReferenceId" DataType="System.Nullable`1[[System.Int64, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+      <Column Name="Customer" DataType="ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsCustomerResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="Name" DataType="System.String"/>
+        <Column Name="IdentityNumber" DataType="System.String"/>
+        <Column Name="IsCompany" DataType="System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+        <Column Name="PhoneNumber" DataType="System.String"/>
+      </Column>
+      <Column Name="Address" DataType="ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsAddressResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Column Name="City" DataType="System.String"/>
+        <Column Name="FullAddress" DataType="System.String"/>
+      </Column>
+      <Column Name="Project" DataType="ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsProjectResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Column Name="Name" DataType="System.String"/>
+      </Column>
+      <Column Name="Reference" DataType="ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsReferenceResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="SerialNumber" DataType="System.String"/>
+      </Column>
+      <Column Name="Type" DataType="ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsTypeResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Column Name="Name" DataType="System.String"/>
+        <Column Name="DisplayNameOnContract" DataType="System.String"/>
+        <Column Name="DisplayNameOnOffer" DataType="System.String"/>
+        <Column Name="ContractSetting" DataType="ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsSettingsResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Column Name="ContractId" DataType="System.Int64"/>
+          <Column Name="ShowParties" DataType="System.Boolean" BindableControl="CheckBox"/>
+          <Column Name="ShowFields" DataType="System.Boolean" BindableControl="CheckBox"/>
+          <Column Name="ShowInstalments" DataType="System.Boolean" BindableControl="CheckBox"/>
+          <Column Name="ShowImplementations" DataType="System.Boolean" BindableControl="CheckBox"/>
+          <Column Name="ShowItemsInfo" DataType="System.Boolean" BindableControl="CheckBox"/>
+          <Column Name="ShowInvoice" DataType="System.Boolean" BindableControl="CheckBox"/>
+          <Column Name="ShowTerms" DataType="System.Boolean" BindableControl="CheckBox"/>
+          <Column Name="ShowSignature" DataType="System.Boolean" BindableControl="CheckBox"/>
+          <Column Name="ShowQRCode" DataType="System.Boolean" BindableControl="CheckBox"/>
+          <Column Name="SetHeaderImage" DataType="System.Boolean" BindableControl="CheckBox"/>
+          <Column Name="SetFooterImage" DataType="System.Boolean" BindableControl="CheckBox"/>
+          <Column Name="ShouldGroupFields" DataType="System.Boolean" BindableControl="CheckBox"/>
+        </Column>
+      </Column>
+      <Column Name="TenantInfo" DataType="Showmatics.Application.Multitenancy.TenantDto, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Column Name="Id" DataType="System.String"/>
+        <Column Name="Name" DataType="System.String"/>
+        <Column Name="ConnectionString" DataType="System.String"/>
+        <Column Name="AdminEmail" DataType="System.String"/>
+        <Column Name="IsActive" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="ValidUpto" DataType="System.DateTime"/>
+        <Column Name="Issuer" DataType="System.String"/>
+        <Column Name="PhoneNumber" DataType="System.String"/>
+        <Column Name="BankAccount" DataType="System.String"/>
+        <Column Name="Address" DataType="System.String"/>
+        <Column Name="Contact" DataType="System.String"/>
+        <Column Name="OwnerName" DataType="System.String"/>
+        <Column Name="Title" DataType="System.String"/>
+        <Column Name="RegistrationNo" DataType="System.String"/>
+        <Column Name="HeaderUrl" DataType="System.String"/>
+        <Column Name="FooterUrl" DataType="System.String"/>
+        <Column Name="LogoUrl" DataType="System.String"/>
+        <Column Name="PrimaryColor" DataType="System.String"/>
+        <Column Name="SecondaryColor" DataType="System.String"/>
+        <Column Name="BankName" DataType="System.String"/>
+      </Column>
+      <BusinessObjectDataSource Name="Implementations" DataType="System.Collections.Generic.ICollection`1[[ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsImplementationResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+        <Column Name="ImplementationId" DataType="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+        <Column Name="StartDate" DataType="System.Nullable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+        <Column Name="EndDate" DataType="System.Nullable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+        <Column Name="ActualStartDate" DataType="System.Nullable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+        <Column Name="ActualEndDate" DataType="System.Nullable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+        <Column Name="Comment" DataType="System.String"/>
+        <Column Name="Implementation" DataType="ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsImplementationInfoResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Column Name="Name" DataType="System.String"/>
+        </Column>
+      </BusinessObjectDataSource>
+      <BusinessObjectDataSource Name="InstallmentsPlan" DataType="System.Collections.Generic.ICollection`1[[ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsInstallmentPlanResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="Name" DataType="System.String"/>
+        <Column Name="Description" DataType="System.String"/>
+        <Column Name="Amount" DataType="System.Decimal"/>
+        <Column Name="PaidAmount" DataType="System.Decimal"/>
+        <Column Name="InvoiceNumber" DataType="System.String"/>
+        <Column Name="PlanDate" DataType="System.Nullable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+        <Column Name="PaymentDate" DataType="System.Nullable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+        <Column Name="Percentage" DataType="System.Int32"/>
+        <Column Name="OutstandingBalance" DataType="System.Decimal"/>
+      </BusinessObjectDataSource>
+      <BusinessObjectDataSource Name="Items" DataType="System.Collections.Generic.ICollection`1[[ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsItemResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+        <Column Name="ItemId" DataType="System.Int32"/>
+        <Column Name="UnitPrice" DataType="System.Decimal"/>
+        <Column Name="CurrentPrice" DataType="System.Decimal"/>
+        <Column Name="Quantity" DataType="System.Decimal"/>
+        <Column Name="Discount" DataType="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+        <Column Name="Total" DataType="System.Decimal"/>
+        <Column Name="Label" DataType="System.String"/>
+        <Column Name="Item" DataType="ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsItemInfoResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Column Name="Id" DataType="System.Int32"/>
+          <Column Name="Name" DataType="System.String"/>
+          <Column Name="Description" DataType="System.String"/>
+        </Column>
+      </BusinessObjectDataSource>
+      <BusinessObjectDataSource Name="ContractFields" DataType="System.Collections.Generic.ICollection`1[[ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsFieldResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+        <Column Name="FieldId" DataType="System.Int32"/>
+        <Column Name="FieldText" DataType="System.String"/>
+        <Column Name="FieldValue" DataType="System.String"/>
+        <Column Name="FormName" DataType="System.String"/>
+        <Column Name="Field" DataType="ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsFieldInfoResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Column Name="ShowInContract" DataType="System.Boolean" BindableControl="CheckBox"/>
+        </Column>
+      </BusinessObjectDataSource>
+      <BusinessObjectDataSource Name="ContractTerms" DataType="System.Collections.Generic.ICollection`1[[ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsTermResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="TermId" DataType="System.Int32"/>
+        <Column Name="TermText" DataType="System.String"/>
+        <Column Name="Term" DataType="ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsTermInfoResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Column Name="Id" DataType="System.Int32"/>
+          <Column Name="Name" DataType="System.String"/>
+          <Column Name="Position" DataType="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+          <Column Name="ParentId" DataType="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+          <Column Name="Group" DataType="ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsTermGroupResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <Column Name="Id" DataType="System.Int32"/>
+            <Column Name="Name" DataType="System.String"/>
+          </Column>
+          <BusinessObjectDataSource Name="Children" DataType="System.Collections.Generic.List`1[[ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsTermChildResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+            <Column Name="Id" DataType="System.Int32"/>
+            <Column Name="Name" DataType="System.String"/>
+            <Column Name="Position" DataType="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+          </BusinessObjectDataSource>
+        </Column>
+      </BusinessObjectDataSource>
+      <BusinessObjectDataSource Name="ContractServices" DataType="System.Collections.Generic.ICollection`1[[ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsServiceResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+        <Column Name="ServiceId" DataType="System.Int32"/>
+        <Column Name="Description" DataType="System.String"/>
+        <Column Name="Price" DataType="System.Decimal"/>
+        <Column Name="Percentage" DataType="System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+        <Column Name="Service" DataType="ShowMatic.Server.Application.Catalog.Contracts.GetDetails.PrintContractDetailsServiceInfoResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Column Name="Name" DataType="System.String"/>
+        </Column>
+      </BusinessObjectDataSource>
+      <Column Name="StartDate" DataType="System.Nullable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+      <Column Name="EndDate" DataType="System.Nullable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+      <Column Name="OfferExpiryDate" DataType="System.DateTimeOffset"/>
+      <Column Name="EveryNoOfDays" DataType="System.Int32"/>
+      <Column Name="WarrantyDays" DataType="System.Int32"/>
+      <Column Name="IsOffer" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <BusinessObjectDataSource Name="Cases" DataType="System.Collections.Generic.ICollection`1[[ShowMatic.Server.Application.Catalog.Contracts.GetContractCaseResponse, Showmatics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+        <Column Name="CategoryId" DataType="System.Int32"/>
+        <Column Name="CategoryUnitId" DataType="System.Int32"/>
+        <Column Name="UnitItemId" DataType="System.Int32"/>
+        <Column Name="Priority" DataType="System.String"/>
+        <Column Name="Date" DataType="System.Nullable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+        <Column Name="CompletedOn" DataType="System.Nullable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"/>
+        <Column Name="StatusId" DataType="System.Int32"/>
+        <Column Name="Description" DataType="System.String"/>
+        <Column Name="IsContractual" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </BusinessObjectDataSource>
+      <Column Name="HasEnded" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="OfferIsExpired" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="InFuture" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="InWarranty" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="RemainingDays" DataType="System.Int32"/>
+      <Column Name="PassedDays" DataType="System.Int32"/>
+      <Column Name="Days" DataType="System.Int32"/>
+      <Column Name="NoOfServicesShouldBeDoneByNow" DataType="System.Int32"/>
+      <Column Name="NoOfRemainingServicesByNow" DataType="System.Int32"/>
+      <Column Name="TotalServices" DataType="System.Int32"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage RawPaperSize="9" Watermark.Font="Arial, 60pt">
+    <PageHeaderBand Name="PageHeader1" Width="718.2" Height="113.4" CanGrow="true">
+      <PictureObject Name="HeaderImage" Width="718.2" Height="145.75" Dock="Top" ImageLocation="Files/header.jpg"/>
+    </PageHeaderBand>
+    <DataBand CanGrow="true" DataSource="" PrintIfDetailEmpty="true" PrintIfDatasourceEmpty="true">
+      <DataHeaderBand Name="ContractHeader" Top="155.2" Width="718.2" Height="160.65">
+        <TextObject Name="PrintDateTxt" Left="396.9" Top="9.45" Width="255.15" Height="18.9" Text="26-12-2023" RightToLeft="true" Font="Calibri, 11pt"/>
+        <TextObject Name="Text3" Left="75.6" Top="9.45" Width="66.15" Height="18.9" Text="عرض رقم:" HorzAlign="Right" RightToLeft="true" Font="Calibri, 11pt, style=Bold"/>
+        <TextObject Name="Text37" Left="652.05" Top="9.45" Width="56.7" Height="18.9" Text="التاريخ :" HorzAlign="Right" RightToLeft="true" Font="Calibri, 11pt, style=Bold"/>
+        <TextObject Name="Text103" Left="652.05" Top="37.8" Width="56.7" Height="18.9" Text="الموافق :" HorzAlign="Right" RightToLeft="true" Font="Calibri, 11pt, style=Bold"/>
+        <TextObject Name="DocumentNumberTxt" Left="9.45" Top="9.45" Width="66.15" Height="18.9" Text="MC00013" HorzAlign="Right" Font="Calibri, 11pt"/>
+        <TextObject Name="DateInHigriTxt" Left="396.9" Top="37.8" Width="255.15" Height="18.9" Text="13-06-1445" RightToLeft="true" Font="Calibri, 11pt"/>
+        <ContainerObject Name="Container1" Left="9.45" Top="37.8" Width="132.3" Height="122.85">
+          <BarcodeObject Name="QRCodeObject" Width="132.3" Height="122.85" Dock="Fill" Anchor="Bottom, Left" Text="{&quot;Id&quot;:&quot;MC00013&quot;,&quot;CustomerId&quot;:&quot;10006&quot;}" ShowText="false" Barcode="QR Code" Barcode.Font="Arial, 11pt" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
+          <TextObject Name="DocumentNameTxt" Top="41.8" Width="699.3" Height="28.35" Text="عقد صيانة مصاعد سنوي" HorzAlign="Center" Font="Calibri, 16pt, style=Bold"/>
+        </ContainerObject>
+        <TextObject Name="ReferenceLabelTxt" Left="359.1" Top="113.4" Width="94.5" Height="18.9" Visible="false" Text="يتبع للعقد رقم:" HorzAlign="Right" RightToLeft="true" Font="Calibri, 11pt, style=Bold"/>
+        <TextObject Name="ReferenceSerialNumberTxt" Left="292.95" Top="113.4" Width="66.15" Height="18.9" HorzAlign="Right" Font="Calibri, 11pt"/>
+        <ChildBand Name="CustomerNameHeaderChildBand" Top="319.85" Width="718.2" Visible="false">
+          <TextObject Name="Text108" Left="623.7" Width="85.05" Height="18.9" Text=": إسم العميل" HorzAlign="Right" Font="Calibri, 12pt, style=Bold"/>
+          <TextObject Name="SecondPartyNameInHeaderTxt" Left="9.45" Width="623.7" Height="18.9" Text="شركة بازان الهندسية" HorzAlign="Right" Font="Calibri, 12pt, style=Bold"/>
+          <ChildBand Name="ContractHeaderPariesChildBand" Top="342.75" Width="718.2" Height="170.1">
+            <TextObject Name="Text104" Left="623.7" Top="90.5" Width="85.05" Height="18.9" Text=": يمثلها السيد" HorzAlign="Right" Font="Calibri, 11pt, style=Bold"/>
+            <TextObject Name="OwnerNameTxt" Left="264.6" Top="90.5" Width="368.55" Height="18.9" Text="محمد جمال أبو جاد" HorzAlign="Right" Font="Calibri, 11pt, style=Underline" TextFill.Color="Brown"/>
+            <TextObject Name="FirstPartyOwnerTitleTxt" Left="9.45" Top="90.5" Width="160.65" Height="18.9" Text="المدير العام" HorzAlign="Right" Font="Calibri, 11pt, style=Underline" TextFill.Color="Brown"/>
+            <TextObject Name="Text106" Left="170.1" Top="90.5" Width="56.7" Height="18.9" Text=": بصفته" HorzAlign="Right" Font="Calibri, 11pt, style=Bold"/>
+            <TextObject Name="FirstPartyRegistrationNoTxt" Left="9.45" Top="66.15" Width="160.65" Height="18.9" Text="4031215844" HorzAlign="Right" Font="Calibri, 11pt, style=Underline" TextFill.Color="Brown"/>
+            <TextObject Name="Text7" Left="614.25" Top="66.15" Width="94.5" Height="18.9" Text=": مقرها الرئيسى" HorzAlign="Right" Font="Calibri, 11pt, style=Bold"/>
+            <TextObject Name="FirstPartyAddressTxt" Left="264.6" Top="66.15" Width="359.1" Height="18.9" Text="مكة المكرمة - العوالي - شارع إبراهيم الجفالي - مركز العيسي الإداري مكتب رقم 24" HorzAlign="Right" Font="Calibri, 11pt, style=Underline" TextFill.Color="Brown"/>
+            <TextObject Name="Text9" Left="170.1" Top="66.15" Width="85.05" Height="18.9" Text=": سجل تجاري" HorzAlign="Right" Font="Calibri, 11pt, style=Bold"/>
+            <TextObject Name="Text6" Left="642.6" Top="37.8" Width="66.15" Height="18.9" Text=": طرف أول" HorzAlign="Right" Font="Calibri, 11pt, style=Bold, Underline"/>
+            <TextObject Name="FirstPartyNameTxt" Left="264.6" Top="37.8" Width="378" Height="18.9" Text="شركة أبراج اليوم للمصاعد والسلالم المتحركة" HorzAlign="Right" Font="Calibri, 11pt, style=Underline" TextFill.Color="Brown"/>
+            <TableObject Name="Table1" Left="9.45" Top="141.75" Width="703.15" Height="18.9" AdjustSpannedCellsWidth="true">
+              <TableColumn Name="Column1" Width="120.43"/>
+              <TableColumn Name="Column2" Width="54.31"/>
+              <TableColumn Name="Column3" Width="139.22"/>
+              <TableColumn Name="Column4" Width="101.59"/>
+              <TableColumn Name="Column5" Width="217.35"/>
+              <TableColumn Name="Column6" Width="70.25"/>
+              <TableRow Name="Row1">
+                <TableCell Name="SecondPartyPhoneTxt" Text="966966635" HorzAlign="Right" Font="Calibri, 10pt"/>
+                <TableCell Name="Cell9" Text=": جوال" Font="Calibri, 11pt, style=Bold"/>
+                <TableCell Name="SecondPartyIdTxt" Text="65498987654" HorzAlign="Right" Font="Calibri, 10pt"/>
+                <TableCell Name="SecondPartyIdLableTxt" Text=": الهوية" Font="Calibri, 11pt, style=Bold"/>
+                <TableCell Name="SecondPartyAddressTxt" Text=" العزيزية, مكة المكرمة, مكة المكرمة, السعودية" RightToLeft="true" Font="Calibri, 10pt"/>
+                <TableCell Name="Cell6" Text=": العنوان " HorzAlign="Right" Font="Calibri, 11pt, style=Bold"/>
+              </TableRow>
+            </TableObject>
+            <TextObject Name="Text12" Left="642.6" Top="113.4" Width="66.15" Height="18.9" Text=": طرف ثاني" HorzAlign="Right" Font="Calibri, 11pt, style=Bold, Underline"/>
+            <TextObject Name="SecondPartyNameTxt" Left="264.6" Top="113.4" Width="378" Height="18.9" Text="مجموعة ميزاب الفندقية" HorzAlign="Right" Font="Calibri, 11pt"/>
+            <TextObject Name="Text5" Left="264.6" Top="9.45" Width="444.15" Height="18.9" Text=": تم بعون الله تعالى الاتفاق بين كل من" HorzAlign="Right" Font="Calibri, 11pt"/>
+          </ChildBand>
+        </ChildBand>
+      </DataHeaderBand>
+    </DataBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="1097.6" Width="718.2" Height="28.35" KeepWithData="true" Condition="[contract.ContractFields.FormName]" KeepTogether="true">
+      <TextObject Name="FormNameTxt" Left="9.45" Top="4.45" Width="699.3" Height="18.9" Text="[contract.ContractFields.FormName]" HorzAlign="Right" Font="Calibri, 11pt, style=Bold"/>
+      <DataBand Name="FormFieldsDataBand" Top="1129.95" Width="238.14" Height="28.35" CanGrow="true" DataSource="ContractFields" Columns.Count="3" Columns.Width="238.14" Columns.MinRowCount="3" KeepTogether="true">
+        <TableObject Name="Table20" Left="9.19" Width="226.8" Height="28.35" Border.Lines="All" Border.Color="LightGray" Layout="Wrapped">
+          <TableColumn Name="Column69" Width="94.5"/>
+          <TableColumn Name="Column70" Width="132.3"/>
+          <TableRow Name="Row28" Height="28.35">
+            <TableCell Name="FormFieldValueTxt" Fill.Color="WhiteSmoke" Text="[contract.ContractFields.FieldValue]" HorzAlign="Center" VertAlign="Center" Font="Calibri, 10pt"/>
+            <TableCell Name="FormFieldNameTxt" Text="[contract.ContractFields.FieldText]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 10pt, style=Bold"/>
+          </TableRow>
+        </TableObject>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter2" Top="1162.3" Width="718.2"/>
+    </GroupHeaderBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="617.9" Width="718.2" Height="37.8" CanGrow="true" FirstRowStartsNewPage="true" Condition="[contract.ContractTerms.Term.Group.Name]" SortOrder="None" KeepTogether="true">
+      <TextObject Name="TermGroupTitleTxt" Left="9.45" Top="14.45" Width="680.4" Height="18.9" Text="[contract.ContractTerms.Term.Group.Name]" RightToLeft="true" Font="Calibri, 11pt, style=Bold"/>
+      <TextObject Name="GroupNumberTxt" Left="689.85" Top="14.45" Width="18.9" Height="18.9" Text="50" HorzAlign="Right" RightToLeft="true" Font="Calibri, 11pt, style=Bold"/>
+      <DataBand Name="OuterTermDataBand" Top="659.7" Width="718.2" Height="18.9" CanGrow="true" FirstRowStartsNewPage="true" DataSource="ContractTerms" KeepTogether="true">
+        <TextObject Name="OuterTermText" Left="9.45" Width="670.95" Height="18.9" CanGrow="true" GrowToBottom="true" Text="[contract.ContractTerms.TermText]" Duplicates="Clear" HorzAlign="Justify" RightToLeft="true" Font="Calibri, 11pt" TextRenderType="HtmlTags"/>
+        <TextObject Name="OuterTermNumberTxt" Left="680.4" Width="28.35" Height="18.9" CanGrow="true" GrowToBottom="true" Text="98" Duplicates="Clear" HorzAlign="Right" RightToLeft="true" Font="Calibri, 11pt"/>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="682.6" Width="718.2"/>
+    </GroupHeaderBand>
+    <ReportSummaryBand Name="SignatureBand" Top="1198.65" Width="718.2" Height="141.75">
+      <TextObject Name="DescriptionText" Left="9.45" Top="9.45" Width="699.3" Height="18.9" CanGrow="true" GrowToBottom="true" Text="حرر هذا العقد من نسختين أصليتين لكل طرف نسخة للعمل بموجبها وعلى هذا تم الاتفاق وجرى التوقيع" RightToLeft="true" Font="Calibri, 10pt, style=Italic" TextFill.Color="SteelBlue"/>
+      <TableObject Name="Table12" Left="9.45" Top="28.35" Width="699.12" Height="103.95" Border.Lines="All" Border.Color="LightGray">
+        <TableColumn Name="Column33" Width="229.12"/>
+        <TableColumn Name="Column34" Width="120.44"/>
+        <TableColumn Name="Column35" Width="229.12"/>
+        <TableColumn Name="Column36" Width="120.44"/>
+        <TableRow Name="Row14" Height="25.2">
+          <TableCell Name="Cell50" Fill.Color="WhiteSmoke" Text="الطرف الثاني" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell51" Font="Arial, 10pt"/>
+          <TableCell Name="Cell52" Fill.Color="WhiteSmoke" Text="الطرف الأول" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell53" Font="Arial, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row15" Height="25.2">
+          <TableCell Name="SecondPartyName" Border.Lines="All" Border.Color="LightGray" Text="مجموعة ميزاب الفندقية" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11.25pt" ColSpan="2"/>
+          <TableCell Name="Cell55" Font="Arial, 10pt"/>
+          <TableCell Name="FirstPartyName" Border.Lines="All" Border.Color="LightGray" Text="شركة أبراج اليوم للمصاعد والسلالم المتحركة" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11.25pt" ColSpan="2"/>
+          <TableCell Name="Cell57" Font="Arial, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row16" Height="53.55">
+          <TableCell Name="Cell58" Border.Lines="All" Border.Color="LightGray" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell59" Border.Lines="All" Border.Color="LightGray" Text="التوقيع" HorzAlign="Right" Font="Calibri, 11pt, style=Bold"/>
+          <TableCell Name="Cell60" Border.Lines="All" Border.Color="LightGray" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell61" Border.Lines="All" Border.Color="LightGray" Text="التوقيع" HorzAlign="Right" Font="Calibri, 11pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+    </ReportSummaryBand>
+    <PageFooterBand Height="113.4">
+      <TextObject Width="718.2" Height="18.9" Text="[Page#]/[TotalPages#]" HorzAlign="Center" RightToLeft="true" Font="Arial, 10pt">
+        <Formats>
+          <GeneralFormat/>
+          <GeneralFormat/>
+          <GeneralFormat/>
+        </Formats>
+      </TextObject>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

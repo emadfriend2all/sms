@@ -1,0 +1,61 @@
+﻿@page "/catalog/customers"
+@using Showmatics.Blazor.Client.Components.Catalog.Customer;
+@attribute [MustHavePermission(FSHAction.View, FSHResource.Customers)]
+
+@inject IStringLocalizer<Customers> L
+
+<FshTitle Title="@L["Customers"]" Description="@L["Manage Customers."]" />
+
+<EntityTable @ref="_table" TEntity="GetCustomerResponse" TId="int" TRequest="UpdateCustomerRequest" Context="@Context" HasDetails="true">
+
+    <AdvancedSearchContent>
+        @* <BrandAutocomplete @bind-Value="SearchBrandId" /> *@
+        <MudGrid>
+            <MudItem xs="12" sm="6" md="3">
+                <FSHTextField @bind-Value="SearchPhoneNumber" Mask="@(new PatternMask("000 0000 0000 0000"))" Label="@L["PhoneNumber"]" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Phone" AdornmentColor="Color.Secondary" />
+            </MudItem>
+            <MudItem xs="12" sm="6" md="3">
+                <FSHTextField @bind-Value="SearchIdentity" Label="@L["IdentityNumber"]" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.PermIdentity" AdornmentColor="Color.Secondary" />
+            </MudItem>
+            <MudItem xs="12" sm="6" md="3">
+                <FSHTextField @bind-Value="SearchAddress" Label="@L["Address"]" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.LocationOn" AdornmentColor="Color.Secondary" />
+            </MudItem>
+        </MudGrid>
+    </AdvancedSearchContent>
+
+    <EditFormContent>
+        <AddEditCustomer @bind-Request="context"/>
+    </EditFormContent>
+</EntityTable>
+
+@code {
+    protected RenderFragment<GetCustomerResponse> CustomerContactTemplate => customer => __builder =>
+    {
+        if (customer?.Contacts == null)
+        {
+            return;
+        }
+
+        @foreach (var contact in customer!.Contacts)
+        {
+            <MudItem>
+                <MudChip Label="true" Color="Color.Surface">@contact.PhoneNumber</MudChip>
+            </MudItem>
+        }
+    };
+
+    protected RenderFragment<GetCustomerResponse> CustomerAddressTemplate => customer => __builder =>
+    {
+        if (customer?.Addresses == null)
+        {
+            return;
+        }
+
+        @foreach (var address in customer!.Addresses)
+        {
+            <MudItem>
+                <MudChip Label="true" Color="Color.Surface">@address.FullAddress</MudChip>
+            </MudItem>
+        }
+    };
+}

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/11/2023 00:42:50" ReportInfo.Modified="12/24/2023 00:37:28" ReportInfo.CreatorVersion="2023.3.0.0">
+  <Dictionary/>
+  <ReportPage Name="Page1" RawPaperSize="9" Guides="491.4" Border.Color="Transparent" Watermark.Font="Arial, 60pt">
+    <DataBand Name="QRCodeBand" Width="359.1" Height="359.1" Guides="170.1" Columns.Count="2">
+      <ContainerObject Name="QRCodeContainer" Width="378" Height="359.1" Border.Color="DarkGray">
+        <BarcodeObject Name="QRCodeObject" Width="378" Height="359.1" Dock="Fill" Border.Color="DarkGray" Border.Style="Dot" ShowText="false" Barcode="QR Code" Barcode.Color="64, 64, 64" Barcode.Font="Arial, 11pt" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
+        <ShapeObject Name="Shape2" Left="47.25" Top="317.85" Width="283.5" Height="28.35" Fill.Color="64, 64, 64"/>
+        <TextObject Name="QRSerialNumberTxt" Left="51.25" Top="322.75" Width="274.05" Height="18.9" Text="451" HorzAlign="Center" VertAlign="Center" Font="Arial, 16pt, style=Bold" TextFill.Color="White"/>
+        <ShapeObject Name="Shape1" Left="47.25" Top="9.45" Width="283.5" Height="28.35" Border.Color="64, 64, 64" Fill.Color="64, 64, 64"/>
+        <TextObject Name="QRCompanyNameTxt" Left="47.7" Top="9.45" Width="283.5" Height="28.35" Text="شركة أبراج اليوم للمصاعد والسلالم المتحركة" HorzAlign="Center" VertAlign="Center" Font="Calibri, 13pt, style=Bold" TextFill.Color="White"/>
+      </ContainerObject>
+    </DataBand>
+  </ReportPage>
+</Report>

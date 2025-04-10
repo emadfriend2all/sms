@@ -1,0 +1,25 @@
+﻿@inherits MudTextField<T> 
+@typeparam T
+@* @page "/simpletxtfield" *@
+
+<link href="css/editable_text.css" rel="stylesheet" />
+<tr class="editable-container">
+    <td><MudText Typo="Typo.caption" Class="d-flex align-center me-1" Style="padding-top: 6px;">@Label</MudText></td>
+    <td class="editable-container">
+        <MudTextField T="T" @attributes="UserAttributes" Placeholder="@Label" Dense="true" Margin="Margin.Dense" Variant="Variant.Outlined" Label="">
+            @ChildContent
+        </MudTextField>
+    </td>
+</tr>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = default!;
+    [Parameter]
+    public string TitleIcon { get; set; } = default!;
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    protected override void OnInitialized()
+    {
+    }
+
+}

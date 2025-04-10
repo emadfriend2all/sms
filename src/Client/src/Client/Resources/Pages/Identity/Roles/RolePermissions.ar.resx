@@ -1,0 +1,822 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="All Permissions" xml:space="preserve">
+    <value>كل الصلاحيات</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>تطبيق</value>
+  </data>
+  <data name="Bordered" xml:space="preserve">
+    <value>يحدها</value>
+  </data>
+  <data name="Dense" xml:space="preserve">
+    <value>كثيف</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="Here you can leave a comment for this permission for the current role" xml:space="preserve">
+    <value>هنا يمكنك ترك تعليق لهذا الإذن للدور الحالي</value>
+  </data>
+  <data name="Manage Permission" xml:space="preserve">
+    <value>إدارة الإذن</value>
+  </data>
+  <data name="Manage {0} {1}'s Permissions" xml:space="preserve">
+    <value>إدارة أذونات {0} {1}</value>
+  </data>
+  <data name="Permission Name" xml:space="preserve">
+    <value>الصلاحية</value>
+  </data>
+  <data name="Search For Permissions" xml:space="preserve">
+    <value>ابحث عن أذونات</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="Striped" xml:space="preserve">
+    <value>مخطط</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>نوع</value>
+  </data>
+  <data name="Update Role Permissions" xml:space="preserve">
+    <value>تعديل صلاحيات الدور</value>
+  </data>
+  <data name="Will be saved only when selected Permission" xml:space="preserve">
+    <value>سيتم حفظها فقط عند تحديد الإذن </value>
+  </data>
+  <data name="Permissions.Addresses.Create" xml:space="preserve">
+    <value>إنشاء العناوين</value>
+  </data>
+  <data name="Permissions.Addresses.Delete" xml:space="preserve">
+    <value>حذف العناوين</value>
+  </data>
+  <data name="Permissions.Addresses.Export" xml:space="preserve">
+    <value>تصدير العناوين</value>
+  </data>
+  <data name="Permissions.Addresses.Search" xml:space="preserve">
+    <value>البحث في العناوين</value>
+  </data>
+  <data name="Permissions.Addresses.Update" xml:space="preserve">
+    <value>تعديل العناوين</value>
+  </data>
+  <data name="Permissions.Addresses.View" xml:space="preserve">
+    <value>عرض العناوين</value>
+  </data>
+  <data name="Permissions.Addresses.ViewAll" xml:space="preserve">
+    <value>عرض جميع العناوين</value>
+  </data>
+  <data name="Permissions.Brands.Clean" xml:space="preserve">
+    <value>تنظيف العلامات التجارية</value>
+  </data>
+  <data name="Permissions.Brands.Create" xml:space="preserve">
+    <value>إنشاء العلامات التجارية</value>
+  </data>
+  <data name="Permissions.Brands.Delete" xml:space="preserve">
+    <value>حذف العلامات التجارية</value>
+  </data>
+  <data name="Permissions.Brands.Generate" xml:space="preserve">
+    <value>إنشاء العلامات التجارية</value>
+  </data>
+  <data name="Permissions.Brands.Search" xml:space="preserve">
+    <value>البحث في العلامات التجارية</value>
+  </data>
+  <data name="Permissions.Brands.Update" xml:space="preserve">
+    <value>تعديل العلامات التجارية</value>
+  </data>
+  <data name="Permissions.Brands.View" xml:space="preserve">
+    <value>عرض العلامات التجارية</value>
+  </data>
+  <data name="Permissions.CaseCategories.Create" xml:space="preserve">
+    <value>إنشاء فئات المهام</value>
+  </data>
+  <data name="Permissions.CaseCategories.Delete" xml:space="preserve">
+    <value>حذف فئات المهام</value>
+  </data>
+  <data name="Permissions.CaseCategories.Export" xml:space="preserve">
+    <value>تصدير فئات المهام</value>
+  </data>
+  <data name="Permissions.CaseCategories.Search" xml:space="preserve">
+    <value>البحث في فئات المهام</value>
+  </data>
+  <data name="Permissions.CaseCategories.Update" xml:space="preserve">
+    <value>تعديل فئات المهام</value>
+  </data>
+  <data name="Permissions.CaseCategories.View" xml:space="preserve">
+    <value>عرض فئات المهام</value>
+  </data>
+  <data name="Permissions.Cases.Create" xml:space="preserve">
+    <value>إنشاء مهام</value>
+  </data>
+  <data name="Permissions.Cases.Delete" xml:space="preserve">
+    <value>حذف مهام</value>
+  </data>
+  <data name="Permissions.Cases.Export" xml:space="preserve">
+    <value>تصدير مهام</value>
+  </data>
+  <data name="Permissions.Cases.Search" xml:space="preserve">
+    <value>البحث في مهام</value>
+  </data>
+  <data name="Permissions.Cases.Update" xml:space="preserve">
+    <value>تعديل مهام</value>
+  </data>
+  <data name="Permissions.Cases.View" xml:space="preserve">
+    <value>عرض مهام</value>
+  </data>
+  <data name="Permissions.Cases.ViewAll" xml:space="preserve">
+    <value>عرض جميع المهام</value>
+  </data>
+  <data name="Permissions.CaseStatuses.Create" xml:space="preserve">
+    <value>إنشاء مهام المهمة</value>
+  </data>
+  <data name="Permissions.CaseStatuses.Delete" xml:space="preserve">
+    <value>حذف مهام المهمة</value>
+  </data>
+  <data name="Permissions.CaseStatuses.Export" xml:space="preserve">
+    <value>تصدير مهام المهمة</value>
+  </data>
+  <data name="Permissions.CaseStatuses.Search" xml:space="preserve">
+    <value>البحث في مهام المهمة</value>
+  </data>
+  <data name="Permissions.CaseStatuses.Update" xml:space="preserve">
+    <value>تعديل مهام المهمة</value>
+  </data>
+  <data name="Permissions.CaseStatuses.View" xml:space="preserve">
+    <value>عرض مهام المهمة</value>
+  </data>
+  <data name="Permissions.CategoryUnit.Search" xml:space="preserve">
+    <value>البحث في وحدة الفئة</value>
+  </data>
+  <data name="Permissions.CategoryUnit.View" xml:space="preserve">
+    <value>عرض وحدة الفئة</value>
+  </data>
+  <data name="Permissions.CategoryUnits.Search" xml:space="preserve">
+    <value>البحث في وحدات الفئة</value>
+  </data>
+  <data name="Permissions.CategoryUnits.View" xml:space="preserve">
+    <value>عرض وحدات الفئة</value>
+  </data>
+  <data name="Permissions.Contacts.Create" xml:space="preserve">
+    <value>إنشاء جهات الاتصال</value>
+  </data>
+  <data name="Permissions.Contacts.Delete" xml:space="preserve">
+    <value>حذف جهات الاتصال</value>
+  </data>
+  <data name="Permissions.Contacts.Export" xml:space="preserve">
+    <value>تصدير جهات الاتصال</value>
+  </data>
+  <data name="Permissions.Contacts.Search" xml:space="preserve">
+    <value>البحث في جهات الاتصال</value>
+  </data>
+  <data name="Permissions.Contacts.Update" xml:space="preserve">
+    <value>تعديل جهات الاتصال</value>
+  </data>
+  <data name="Permissions.Contacts.View" xml:space="preserve">
+    <value>عرض جهات الاتصال</value>
+  </data>
+  <data name="Permissions.ContractAttachments.Create" xml:space="preserve">
+    <value>إنشاء مرفقات العقد</value>
+  </data>
+  <data name="Permissions.ContractAttachments.Delete" xml:space="preserve">
+    <value>حذف مرفقات العقد</value>
+  </data>
+  <data name="Permissions.ContractAttachments.Export" xml:space="preserve">
+    <value>تصدير مرفقات العقد</value>
+  </data>
+  <data name="Permissions.ContractAttachments.Search" xml:space="preserve">
+    <value>البحث في مرفقات العقد</value>
+  </data>
+  <data name="Permissions.ContractAttachments.Update" xml:space="preserve">
+    <value>تعديل مرفقات العقد</value>
+  </data>
+  <data name="Permissions.ContractAttachments.View" xml:space="preserve">
+    <value>عرض مرفقات العقد</value>
+  </data>
+  <data name="Permissions.ContractRenewals.Create" xml:space="preserve">
+    <value>إنشاء تجديدات العقد</value>
+  </data>
+  <data name="Permissions.ContractRenewals.Delete" xml:space="preserve">
+    <value>حذف تجديدات العقد</value>
+  </data>
+  <data name="Permissions.ContractRenewals.Export" xml:space="preserve">
+    <value>تصدير تجديدات العقد</value>
+  </data>
+  <data name="Permissions.ContractRenewals.Search" xml:space="preserve">
+    <value>البحث في تجديدات العقد</value>
+  </data>
+  <data name="Permissions.ContractRenewals.Update" xml:space="preserve">
+    <value>تعديل تجديدات العقد</value>
+  </data>
+  <data name="Permissions.ContractRenewals.View" xml:space="preserve">
+    <value>عرض تجديدات العقد</value>
+  </data>
+  <data name="Permissions.Contracts.Copy" xml:space="preserve">
+    <value>نسخ العقود</value>
+  </data>
+  <data name="Permissions.Contracts.Create" xml:space="preserve">
+    <value>إنشاء العقود</value>
+  </data>
+  <data name="Permissions.Contracts.CreateOrUpdate" xml:space="preserve">
+    <value>إنشاء أو تعديل العقود</value>
+  </data>
+  <data name="Permissions.Contracts.Delete" xml:space="preserve">
+    <value>حذف العقود</value>
+  </data>
+  <data name="Permissions.Contracts.Export" xml:space="preserve">
+    <value>تصدير العقود</value>
+  </data>
+  <data name="Permissions.Contracts.Print" xml:space="preserve">
+    <value>طباعة العقود</value>
+  </data>
+  <data name="Permissions.Contracts.Search" xml:space="preserve">
+    <value>البحث في العقود</value>
+  </data>
+  <data name="Permissions.Contracts.Update" xml:space="preserve">
+    <value>تعديل العقود</value>
+  </data>
+  <data name="Permissions.Contracts.View" xml:space="preserve">
+    <value>عرض العقود</value>
+  </data>
+  <data name="Permissions.ContractStatuses.Create" xml:space="preserve">
+    <value>إنشاء مهام العقد</value>
+  </data>
+  <data name="Permissions.ContractStatuses.Delete" xml:space="preserve">
+    <value>حذف مهام العقد</value>
+  </data>
+  <data name="Permissions.ContractStatuses.Export" xml:space="preserve">
+    <value>تصدير مهام العقد</value>
+  </data>
+  <data name="Permissions.ContractStatuses.Search" xml:space="preserve">
+    <value>البحث في مهام العقد</value>
+  </data>
+  <data name="Permissions.ContractStatuses.Update" xml:space="preserve">
+    <value>تعديل مهام العقد</value>
+  </data>
+  <data name="Permissions.ContractStatuses.View" xml:space="preserve">
+    <value>عرض مهام العقد</value>
+  </data>
+  <data name="Permissions.ContractTemplates.Create" xml:space="preserve">
+    <value>إنشاء قوالب العقد</value>
+  </data>
+  <data name="Permissions.ContractTemplates.Delete" xml:space="preserve">
+    <value>حذف قوالب العقد</value>
+  </data>
+  <data name="Permissions.ContractTemplates.Export" xml:space="preserve">
+    <value>تصدير قوالب العقد</value>
+  </data>
+  <data name="Permissions.ContractTemplates.Search" xml:space="preserve">
+    <value>البحث في قوالب العقد</value>
+  </data>
+  <data name="Permissions.ContractTemplates.Update" xml:space="preserve">
+    <value>تعديل قوالب العقد</value>
+  </data>
+  <data name="Permissions.ContractTemplates.View" xml:space="preserve">
+    <value>عرض قوالب العقد</value>
+  </data>
+  <data name="Permissions.ContractTypes.Create" xml:space="preserve">
+    <value>إنشاء أنواع العقد</value>
+  </data>
+  <data name="Permissions.ContractTypes.Delete" xml:space="preserve">
+    <value>حذف أنواع العقد</value>
+  </data>
+  <data name="Permissions.ContractTypes.Export" xml:space="preserve">
+    <value>تصدير أنواع العقد</value>
+  </data>
+  <data name="Permissions.ContractTypes.Search" xml:space="preserve">
+    <value>البحث في أنواع العقد</value>
+  </data>
+  <data name="Permissions.ContractTypes.Update" xml:space="preserve">
+    <value>تعديل أنواع العقد</value>
+  </data>
+  <data name="Permissions.ContractTypes.View" xml:space="preserve">
+    <value>عرض أنواع العقد</value>
+  </data>
+  <data name="Permissions.Customers.Create" xml:space="preserve">
+    <value>إنشاء العملاء</value>
+  </data>
+  <data name="Permissions.Customers.Delete" xml:space="preserve">
+    <value>حذف العملاء</value>
+  </data>
+  <data name="Permissions.Customers.Export" xml:space="preserve">
+    <value>تصدير العملاء</value>
+  </data>
+  <data name="Permissions.Customers.Search" xml:space="preserve">
+    <value>البحث في العملاء</value>
+  </data>
+  <data name="Permissions.Customers.Update" xml:space="preserve">
+    <value>تعديل العملاء</value>
+  </data>
+  <data name="Permissions.Customers.View" xml:space="preserve">
+    <value>عرض العملاء</value>
+  </data>
+  <data name="Permissions.Dashboard.View" xml:space="preserve">
+    <value>عرض لوحة الإدارة</value>
+  </data>
+  <data name="Permissions.Documents.Create" xml:space="preserve">
+    <value>إنشاء المستندات</value>
+  </data>
+  <data name="Permissions.Documents.Delete" xml:space="preserve">
+    <value>حذف المستندات</value>
+  </data>
+  <data name="Permissions.Documents.Export" xml:space="preserve">
+    <value>تصدير المستندات</value>
+  </data>
+  <data name="Permissions.Documents.Search" xml:space="preserve">
+    <value>البحث في المستندات</value>
+  </data>
+  <data name="Permissions.Documents.Update" xml:space="preserve">
+    <value>تعديل المستندات</value>
+  </data>
+  <data name="Permissions.Documents.View" xml:space="preserve">
+    <value>عرض المستندات</value>
+  </data>
+  <data name="Permissions.Fields.Create" xml:space="preserve">
+    <value>إنشاء الحقول</value>
+  </data>
+  <data name="Permissions.Fields.Delete" xml:space="preserve">
+    <value>حذف الحقول</value>
+  </data>
+  <data name="Permissions.Fields.Export" xml:space="preserve">
+    <value>تصدير الحقول</value>
+  </data>
+  <data name="Permissions.Fields.Search" xml:space="preserve">
+    <value>البحث في الحقول</value>
+  </data>
+  <data name="Permissions.Fields.Update" xml:space="preserve">
+    <value>تعديل الحقول</value>
+  </data>
+  <data name="Permissions.Fields.View" xml:space="preserve">
+    <value>عرض الحقول</value>
+  </data>
+  <data name="Permissions.Hangfire.View" xml:space="preserve">
+    <value>عرض الروبوت</value>
+  </data>
+  <data name="Permissions.Implementations.Create" xml:space="preserve">
+    <value>إنشاء التنفيذات</value>
+  </data>
+  <data name="Permissions.Implementations.Delete" xml:space="preserve">
+    <value>حذف التنفيذات</value>
+  </data>
+  <data name="Permissions.Implementations.Export" xml:space="preserve">
+    <value>تصدير التنفيذات</value>
+  </data>
+  <data name="Permissions.Implementations.Search" xml:space="preserve">
+    <value>البحث في التنفيذات</value>
+  </data>
+  <data name="Permissions.Implementations.Update" xml:space="preserve">
+    <value>تعديل التنفيذات</value>
+  </data>
+  <data name="Permissions.Implementations.View" xml:space="preserve">
+    <value>عرض التنفيذات</value>
+  </data>
+  <data name="Permissions.Members.Create" xml:space="preserve">
+    <value>إنشاء الأفراد</value>
+  </data>
+  <data name="Permissions.Members.Delete" xml:space="preserve">
+    <value>حذف الأفراد</value>
+  </data>
+  <data name="Permissions.Members.Export" xml:space="preserve">
+    <value>تصدير الأفراد</value>
+  </data>
+  <data name="Permissions.Members.Search" xml:space="preserve">
+    <value>البحث في الأفراد</value>
+  </data>
+  <data name="Permissions.Members.Update" xml:space="preserve">
+    <value>تعديل الأفراد</value>
+  </data>
+  <data name="Permissions.Members.View" xml:space="preserve">
+    <value>عرض الأفراد</value>
+  </data>
+  <data name="Permissions.Items.Create" xml:space="preserve">
+    <value>إنشاء المنتجات</value>
+  </data>
+  <data name="Permissions.Items.Delete" xml:space="preserve">
+    <value>حذف المنتجات</value>
+  </data>
+  <data name="Permissions.Items.Export" xml:space="preserve">
+    <value>تصدير المنتجات</value>
+  </data>
+  <data name="Permissions.Items.Search" xml:space="preserve">
+    <value>البحث في المنتجات</value>
+  </data>
+  <data name="Permissions.Items.Update" xml:space="preserve">
+    <value>تعديل المنتجات</value>
+  </data>
+  <data name="Permissions.Items.View" xml:space="preserve">
+    <value>عرض المنتجات</value>
+  </data>
+  <data name="Permissions.Projects.Create" xml:space="preserve">
+    <value>إنشاء المشاريع</value>
+  </data>
+  <data name="Permissions.Projects.Delete" xml:space="preserve">
+    <value>حذف المشاريع</value>
+  </data>
+  <data name="Permissions.Projects.Export" xml:space="preserve">
+    <value>تصدير المشاريع</value>
+  </data>
+  <data name="Permissions.Projects.Search" xml:space="preserve">
+    <value>البحث في المشاريع</value>
+  </data>
+  <data name="Permissions.Projects.Update" xml:space="preserve">
+    <value>تعديل المشاريع</value>
+  </data>
+  <data name="Permissions.Projects.View" xml:space="preserve">
+    <value>عرض المشاريع</value>
+  </data>
+  <data name="Permissions.Projects.ViewAll" xml:space="preserve">
+    <value>عرض جميع المشاريع</value>
+  </data>
+  <data name="Permissions.RoleClaims.Update" xml:space="preserve">
+    <value>تعديل مطالب الدور</value>
+  </data>
+  <data name="Permissions.RoleClaims.View" xml:space="preserve">
+    <value>عرض مطالب الدور</value>
+  </data>
+  <data name="Permissions.Roles.Create" xml:space="preserve">
+    <value>إنشاء الأدوار</value>
+  </data>
+  <data name="Permissions.Roles.Delete" xml:space="preserve">
+    <value>حذف الأدوار</value>
+  </data>
+  <data name="Permissions.Roles.Update" xml:space="preserve">
+    <value>تعديل الأدوار</value>
+  </data>
+  <data name="Permissions.Roles.View" xml:space="preserve">
+    <value>عرض الأدوار</value>
+  </data>
+  <data name="Permissions.SalesOrders.Create" xml:space="preserve">
+    <value>إنشاء فواتير</value>
+  </data>
+  <data name="Permissions.SalesOrders.Delete" xml:space="preserve">
+    <value>حذف فواتير</value>
+  </data>
+  <data name="Permissions.SalesOrders.Export" xml:space="preserve">
+    <value>تصدير فواتير</value>
+  </data>
+  <data name="Permissions.SalesOrders.Search" xml:space="preserve">
+    <value>البحث في الفواتير</value>
+  </data>
+  <data name="Permissions.SalesOrders.Update" xml:space="preserve">
+    <value>تعديل الفواتير</value>
+  </data>
+  <data name="Permissions.SalesOrders.View" xml:space="preserve">
+    <value>عرض طلبات البيع</value>
+  </data>
+  <data name="Permissions.Services.Create" xml:space="preserve">
+    <value>إنشاء الخدمات</value>
+  </data>
+  <data name="Permissions.Services.Delete" xml:space="preserve">
+    <value>حذف الخدمات</value>
+  </data>
+  <data name="Permissions.Services.Export" xml:space="preserve">
+    <value>تصدير الخدمات</value>
+  </data>
+  <data name="Permissions.Services.Search" xml:space="preserve">
+    <value>البحث في الخدمات</value>
+  </data>
+  <data name="Permissions.Services.Update" xml:space="preserve">
+    <value>تعديل الخدمات</value>
+  </data>
+  <data name="Permissions.Services.View" xml:space="preserve">
+    <value>عرض الخدمات</value>
+  </data>
+  <data name="Permissions.Tenants.Create" xml:space="preserve">
+    <value>إنشاء المستأجرين</value>
+  </data>
+  <data name="Permissions.Tenants.Update" xml:space="preserve">
+    <value>تعديل المستأجرين</value>
+  </data>
+  <data name="Permissions.Tenants.UpgradeSubscription" xml:space="preserve">
+    <value>ترقية الاشتراك للمستأجرين</value>
+  </data>
+  <data name="Permissions.Tenants.View" xml:space="preserve">
+    <value>عرض المستأجرين</value>
+  </data>
+  <data name="Permissions.Terms.Create" xml:space="preserve">
+    <value>إنشاء البنود</value>
+  </data>
+  <data name="Permissions.Terms.Delete" xml:space="preserve">
+    <value>حذف البنود</value>
+  </data>
+  <data name="Permissions.Terms.Export" xml:space="preserve">
+    <value>تصدير البنود</value>
+  </data>
+  <data name="Permissions.Terms.Search" xml:space="preserve">
+    <value>البحث في البنود</value>
+  </data>
+  <data name="Permissions.Terms.Update" xml:space="preserve">
+    <value>تعديل البنود</value>
+  </data>
+  <data name="Permissions.Terms.View" xml:space="preserve">
+    <value>عرض البنود</value>
+  </data>
+  <data name="Permissions.TermsGroups.Create" xml:space="preserve">
+    <value>إنشاء مجموعات البنود</value>
+  </data>
+  <data name="Permissions.TermsGroups.Delete" xml:space="preserve">
+    <value>حذف مجموعات البنود</value>
+  </data>
+  <data name="Permissions.TermsGroups.Export" xml:space="preserve">
+    <value>تصدير مجموعات البنود</value>
+  </data>
+  <data name="Permissions.TermsGroups.Search" xml:space="preserve">
+    <value>البحث في مجموعات البنود</value>
+  </data>
+  <data name="Permissions.TermsGroups.Update" xml:space="preserve">
+    <value>تعديل مجموعات البنود</value>
+  </data>
+  <data name="Permissions.TermsGroups.View" xml:space="preserve">
+    <value>عرض مجموعات البنود</value>
+  </data>
+  <data name="Permissions.UnitItems.Search" xml:space="preserve">
+    <value>البحث في عناصر الوحدة</value>
+  </data>
+  <data name="Permissions.UnitItems.View" xml:space="preserve">
+    <value>عرض عناصر الوحدة</value>
+  </data>
+  <data name="Permissions.UserRoles.Update" xml:space="preserve">
+    <value>تعديل أدوار المستخدمين</value>
+  </data>
+  <data name="Permissions.UserRoles.View" xml:space="preserve">
+    <value>عرض أدوار المستخدمين</value>
+  </data>
+  <data name="Permissions.Users.Create" xml:space="preserve">
+    <value>إنشاء المستخدمين</value>
+  </data>
+  <data name="Permissions.Users.Delete" xml:space="preserve">
+    <value>حذف المستخدمين</value>
+  </data>
+  <data name="Permissions.Users.Export" xml:space="preserve">
+    <value>تصدير المستخدمين</value>
+  </data>
+  <data name="Permissions.Users.Search" xml:space="preserve">
+    <value>البحث في المستخدمين</value>
+  </data>
+  <data name="Permissions.Users.Update" xml:space="preserve">
+    <value>تعديل المستخدمين</value>
+  </data>
+  <data name="Permissions.Users.View" xml:space="preserve">
+    <value>عرض المستخدمين</value>
+  </data>
+  <data name="Permissions.WorkGroups.Create" xml:space="preserve">
+    <value>إنشاء مجموعات العمل</value>
+  </data>
+  <data name="Permissions.WorkGroups.Search" xml:space="preserve">
+    <value>البحث في مجموعات العمل</value>
+  </data>
+  <data name="Permissions.WorkGroups.Update" xml:space="preserve">
+    <value>تعديل مجموعات العمل</value>
+  </data>
+  <data name="Permissions.WorkGroups.View" xml:space="preserve">
+    <value>عرض مجموعات العمل</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>لوحة الإدارة</value>
+  </data>
+  <data name="Hangfire" xml:space="preserve">
+    <value>الروبوت</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>المستخدمين</value>
+  </data>
+  <data name="UserRoles" xml:space="preserve">
+    <value>أدوار المستخدمين</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>الأدوار</value>
+  </data>
+  <data name="RoleClaims" xml:space="preserve">
+    <value>صلاحيات الدور</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>المنتجات</value>
+  </data>
+  <data name="Brands" xml:space="preserve">
+    <value>العلامات التجارية</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>العملاء</value>
+  </data>
+  <data name="Cases" xml:space="preserve">
+    <value>المهام</value>
+  </data>
+  <data name="SalesOrders" xml:space="preserve">
+    <value>طلبات البيع</value>
+  </data>
+  <data name="Contracts" xml:space="preserve">
+    <value>العقود</value>
+  </data>
+  <data name="Addresses" xml:space="preserve">
+    <value>العناوين</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>المشاريع</value>
+  </data>
+  <data name="UnitItems" xml:space="preserve">
+    <value>عناصر الوحدة</value>
+  </data>
+  <data name="CategoryUnits" xml:space="preserve">
+    <value>وحدات الفئة</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>الأفراد</value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>جهات الاتصال</value>
+  </data>
+  <data name="WorkGroups" xml:space="preserve">
+    <value>مجموعات العمل</value>
+  </data>
+  <data name="Fields" xml:space="preserve">
+    <value>الحقول</value>
+  </data>
+  <data name="Implementations" xml:space="preserve">
+    <value>التنفيذات</value>
+  </data>
+  <data name="ContractTypes" xml:space="preserve">
+    <value>أنواع العقد</value>
+  </data>
+  <data name="ContractStatuses" xml:space="preserve">
+    <value>مهام العقد</value>
+  </data>
+  <data name="CaseStatuses" xml:space="preserve">
+    <value>مهام المهمة</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>الخدمات</value>
+  </data>
+  <data name="CaseCategories" xml:space="preserve">
+    <value>فئات الحالة</value>
+  </data>
+  <data name="Terms" xml:space="preserve">
+    <value>البنود</value>
+  </data>
+  <data name="TermsGroups" xml:space="preserve">
+    <value>مجموعات البنود</value>
+  </data>
+  <data name="ContractTemplates" xml:space="preserve">
+    <value>قوالب العقد</value>
+  </data>
+  <data name="ContractRenewals" xml:space="preserve">
+    <value>تجديدات العقد</value>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>المستندات</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>رجوع</value>
+  </data>
+  <data name="Search For Role Permissions" xml:space="preserve">
+    <value>البحث عن الصلاحيات</value>
+  </data>
+  <data name="Update Permissions" xml:space="preserve">
+    <value>تعديل الصلاحيات</value>
+  </data>
+  <data name="Manage {0} Role Permissions" xml:space="preserve">
+    <value>إدارة صلاحيات دور {0}</value>
+  </data>
+  <data name="{0} Permissions" xml:space="preserve">
+    <value>{0} صلاحة</value>
+  </data>
+  <data name="Permissions.Forms.Create" xml:space="preserve">
+    <value>إنشاء الإستمارات</value>
+  </data>
+  <data name="Permissions.Forms.Delete" xml:space="preserve">
+    <value>حذف الإستمارات</value>
+  </data>
+  <data name="Permissions.Forms.Export" xml:space="preserve">
+    <value>تصدير الإستمارات</value>
+  </data>
+  <data name="Permissions.Forms.Search" xml:space="preserve">
+    <value>البحث في الإستمارات</value>
+  </data>
+  <data name="Permissions.Forms.Update" xml:space="preserve">
+    <value>تعديل الإستمارات</value>
+  </data>
+  <data name="Permissions.Forms.View" xml:space="preserve">
+    <value>عرض الإستمارات</value>
+  </data>
+  <data name="Forms" xml:space="preserve">
+    <value>الإستمارات</value>
+  </data>
+  <data name="Labels" xml:space="preserve">
+    <value>الإستيكرات</value>
+  </data>
+</root>

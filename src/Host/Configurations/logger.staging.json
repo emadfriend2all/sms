@@ -1,0 +1,7 @@
+{
+  "LoggerSettings": {
+    "AppName": "Showmatics",
+    "WriteToFile": false,
+    "StructuredConsoleLogging": true
+  }
+}

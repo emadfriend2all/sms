@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1",
+    "Name": "Razor",
+    "ImageUrl": "https://fullstackhero.net/images/navbar-logo.png",
+    "Description": "Sample Data"
+  },
+  {
+    "Id": "2",
+    "Name": "Samsung",
+    "ImageUrl": "https://fullstackhero.net/images/navbar-logo.png",
+    "Description": "Sample Data"
+  },
+  {
+    "Id": "3",
+    "Name": "MSI",
+    "ImageUrl": "https://fullstackhero.net/images/navbar-logo.png",
+    "Description": "Sample Data"
+  },
+  {
+    "Id": "4",
+    "Name": "Huawei",
+    "ImageUrl": "https://fullstackhero.net/images/navbar-logo.png",
+    "Description": "Sample Data"
+  }
+]

@@ -1,0 +1,111 @@
+﻿@typeparam TEntity
+
+@inject IJSRuntime JS
+@inject IStringLocalizer<SharedResource> L
+
+<style>
+    .mud-table-container {
+        overflow: auto;
+    }
+</style>
+
+<ErrorBoundary>
+    <ChildContent>
+        <MudTable T="TEntity" Elevation="0" Items="@Data" Dense="true" Striped="true" ReadOnly="false" CanCancelEdit="true" Loading="false"
+        @bind-SelectedItem="_selectedItem" SortLabel="Sort By" CommitEditTooltip="Commit Edit"
+                  RowEditPreview="BackupItem" RowEditCancel="ResetItemToOriginalValues" 
+                  IsEditRowSwitchingBlocked="true" ApplyButtonPosition="TableApplyButtonPosition.Start"
+                  EditButtonPosition="TableEditButtonPosition.Start" EditTrigger="TableEditTrigger.RowClick">
+
+            <ToolBarContent>
+                <MudText Typo="Typo.h6">
+                    <MudIcon Icon="@Icon" Class="me-3 mb-n1" />
+                    @Title
+                </MudText>
+                <MudSpacer />
+                <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Add" Class="pa-0" OnClick="AddNew" />
+            </ToolBarContent>
+            <HeaderContent>
+                @foreach (var field in Context.Items)
+                {
+                    @ViewRowTemplate(field)
+                }
+                @* @if (Context.Fields is not null)
+                {
+                    foreach (var field in Context.Fields)
+                    {
+                        <MudTh>
+                            <MudTableSortLabel SortBy="@field.ValueFunc">@field.DisplayName</MudTableSortLabel>
+                        </MudTh>
+                    }
+                } *@
+                <MudTh Style="text-align:right"></MudTh>
+            </HeaderContent>
+
+            <RowTemplate>
+                @foreach (var field in Context.Fields)
+                {
+                    <MudTd DataLabel="@field.DisplayName">
+                        @if (field.Type == typeof(bool))
+                        {
+                            <MudCheckBox DataLabel="@field.SortLabel" Checked="@field.ValueFunc(context)" ReadOnly Color="Color.Secondary"></MudCheckBox>
+                        }
+                        else
+                        {
+                            <MudText T="@field.Type">@field.ValueFunc(context)?.ToString()</MudText>
+                        }
+                    </MudTd>
+                }
+                <MudTd>
+                    <MudIconButton Size="@Size.Small" Color="Color.Error" Icon="@Icons.Material.Outlined.Delete" Class="pa-0" OnClick="@(() => Remove(context))" />
+                </MudTd>
+
+
+                <MudTd DataLabel="Actions" Style="text-align: right">
+                    <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Add" Class="pa-0" OnClick="AddNew" />
+                </MudTd>
+            </RowTemplate>
+
+            <RowEditingTemplate>
+                
+                @foreach (var field in Context.Items)
+                {
+                    @EditRowTemplate(field)
+                    @* <MudTd DataLabel="@field.DisplayName">
+                        @if (field.Template is not null)
+                        {
+                            @field.Template(context)
+                        }
+                        else if (field.Type == typeof(bool))
+                        {
+                            <MudCheckBox DataLabel="@field.SortLabel" For="@(() => @field.ValueFunc(context))" ReadOnly Color="Color.Secondary"></MudCheckBox>
+                        }
+                        else if (field.Type == typeof(DateTime))
+                        {
+                            DateTime date;
+                            if (!DateTime.TryParse(@field.ValueFunc(context).ToString(), out date))
+                            {
+                                date = DateTime.Now;
+                            }
+                            <MudDatePicker DataLabel="@field.SortLabel" For="@(() => date)" Variant="Variant.Outlined" PickerVariant="PickerVariant.Dialog" DateFormat="dd-MM-yyyy" Date="date" />
+                        }
+                        else
+                        {
+                            var BoundValue = @field.ValueFunc(context).ToString();
+                            <MudTextField DataLabel="@field.SortLabel" @bind-Value="@BoundValue" Variant="Variant.Outlined" Label="@field.DisplayName" Margin="Margin.Dense">@field.ValueFunc(context)?.ToString()</MudTextField>
+                        }
+                    </MudTd> *@
+                } 
+            </RowEditingTemplate>
+            <PagerContent>
+                <TablePager />
+            </PagerContent>
+            <EditButtonContent Context="button">
+                <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" Class="pa-0" OnClick="@button.ButtonAction" Disabled="@button.ButtonDisabled" />
+            </EditButtonContent>
+        </MudTable>
+    </ChildContent>
+    <ErrorContent>
+        <FshCustomError />
+    </ErrorContent>
+</ErrorBoundary>

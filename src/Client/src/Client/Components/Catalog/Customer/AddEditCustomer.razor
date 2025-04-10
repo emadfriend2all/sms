@@ -1,0 +1,49 @@
+﻿@using System;
+@using System.Collections.Generic;
+@using MudBlazor
+@using MudBlazor.Components
+@using Microsoft.AspNetCore.Components.Web
+@using Showmatics.Blazor.Client.Pages.Catalog;
+@inject IStringLocalizer<Customers> L
+
+    <style>
+    .mud-expand-panel .mud-expand-panel-header {
+        width: 100%;
+        align-items: center;
+        display: flex;
+        font-size: .9375rem;
+        line-height: 1;
+        min-height: 48px;
+        outline: 0;
+        padding: 0px 7px;
+        position: relative;
+        transition: min-height .3s cubic-bezier(.25,.8,.5,1);
+        user-select: none;
+    }
+
+    </style>
+
+<MudGrid>
+    <MudItem xs="12" md="4">
+        <MudTextField Variant="Variant.Outlined" T="string" For="@(() => Request.Name)" Margin="Margin.Dense" @bind-Value="Request.Name" Label="@L["Name"]" />
+    </MudItem>
+    <MudItem xs="12" md="3">
+        <MudTextField Variant="Variant.Outlined" For="@(() => Request.IdentityNumber)" Margin="Margin.Dense" @bind-Value="Request.IdentityNumber"
+                      Label="@L["IdentityNumber"]" />
+    </MudItem>
+    <MudItem xs="12" md="3">
+        <MudTextField Variant="Variant.Outlined" For="@(() => Request.RegistrationNo)" Margin="Margin.Dense" @bind-Value="Request.RegistrationNo"
+                      Label="@L["RegistrationNo"]" />
+    </MudItem>
+    <MudItem xs="12" md="2">
+        <MudTextField Variant="Variant.Outlined" For="@(() => Request.TaxNumber)" Margin="Margin.Dense" @bind-Value="Request.TaxNumber"
+                      Label="@L["TaxNumber"]" />
+    </MudItem>
+    <MudItem xs="12" md="4">
+        <MudCheckBox @bind-Checked="@Request.IsCompany" Label="@L["IsCompany"]"></MudCheckBox>
+    </MudItem>
+
+</MudGrid>
+
+
+

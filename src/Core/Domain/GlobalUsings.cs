@@ -1,0 +1,1 @@
+﻿global using Showmatics.Domain.Common.Contracts;

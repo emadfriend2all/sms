@@ -1,0 +1,89 @@
+.editable-container {
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+    border-radius: var(--mud-default-borderradius);
+   
+}
+
+    .editable-container .mud-input.mud-input-outlined .mud-input-outlined-border {
+        border-color: var(--mud-palette-grey-lighter);
+        border-width: 0.5px;
+    }
+
+    .editable-container .mud-input.mud-input-outlined:hover .mud-input-outlined-border {
+        border-color: var(--mud-palette-action-default);
+    }
+
+        .editable-container .mud-input.mud-input-outlined:focus-within .mud-input-outlined-border,
+        .editable-container .mud-input.mud-input-outlined:active .mud-input-outlined-border {
+            border-width: 1px;
+            border-color: var(--mud-palette-primary);
+        }
+
+    .editable-container .mud-input-control > .mud-input-control-input-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        font-size: .800rem;
+    }
+
+.editable-container .mud-icon-root {
+    opacity: 0;
+}
+
+        .editable-container:hover .mud-icon-root,
+        .editable-container:focus-within .mud-icon-root {
+            opacity: 1;
+        }
+
+        .editable-container .mud-checkbox .mud-icon-root {
+            opacity: 1;
+        }
+    .editable-container .mud-icon-default {
+        opacity: 0;
+    }
+
+        .editable-container:active .mud-icon-default,
+        .editable-container:hover .mud-icon-default,
+        .editable-container:focus .mud-icon-default
+        .editable-container:focus-within .mud-icon-default {
+            opacity: 1;
+        }
+
+    .editable-container .mud-input-control > .mud-input-control-input-container > div.mud-input.mud-input-text {
+        margin-top: 0px;
+    }
+
+.editable-container .mud-input > input.mud-input-root, div.mud-input-slot.mud-input-root {
+    font-size: .800rem;
+}
+
+    .editable-container .mud-input > input.mud-input-root {
+        font-size: .800rem;
+    }
+
+.mud-list-item-text mud-list-item-text{
+    font-size: .800rem;
+}
+.editable-container .mud-input-helper-text {
+    margin: 0;
+    font-size: .80rem;
+    padding-inline: 5px;
+}
+
+.editable-container .mud-input > input.mud-input-root-outlined, div.mud-input-slot.mud-input-root-outlined {
+    padding: 3.5px 5px;
+}
+
+    .editable-container .mud-input > input.mud-input-root-outlined.mud-input-root-margin-dense, div.mud-input-slot.mud-input-root-outlined.mud-input-root-margin-dense {
+        padding: 3.5px 5px;
+    }
+
+        .editable-container .mud-typography-body1 {
+            font-size:.80rem;
+        }
+.mud-input-helper-text.mud-input-error {
+    color: var(--mud-palette-error) !important;
+    display: none;
+}

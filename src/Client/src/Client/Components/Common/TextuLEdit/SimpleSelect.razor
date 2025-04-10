@@ -1,0 +1,22 @@
+﻿@inherits MudSelect<T>
+@typeparam T
+
+<link href="css/editable_text.css" rel="stylesheet" />
+
+<tr>
+    <td><MudText Typo="Typo.caption" Class="d-flex align-center me-1" Style="padding-top: 6px;">@Title</MudText></td>
+    <td class="editable-container">
+        <MudSelect T="T" @attributes="UserAttributes" Placeholder="@Label" Dense="true" Margin="Margin.Dense" Variant="Variant.Outlined" Label=""
+                   DisableUnderLine="true">
+            @ChildContent
+        </MudSelect>
+    </td>
+</tr>
+
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = default!;
+    [Parameter]
+    public string TitleIcon { get; set; } = default!;
+}

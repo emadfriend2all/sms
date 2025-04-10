@@ -1,0 +1,64 @@
+﻿@inherits MudTimePicker
+@* @page "/simpletxtfield" *@
+<style>
+    .editable-textbox {
+        border: 1px solid transparent; /* Initially transparent border */
+        transition: border-color 0.3s ease; /* Smooth transition for border color change */
+        border-radius: var(--mud-default-borderradius);
+    }
+
+        .editable-textbox:hover {
+            border-radius: var(--mud-default-borderradius);
+            border-color: var(--mud-palette-lines-inputs);
+            cursor: pointer;
+        }
+
+    .mud-input-control > .mud-input-control-input-container > div.mud-input.mud-input-text {
+        margin-top: 0px;
+    }
+
+    .mud-input > input.mud-input-root, div.mud-input-slot.mud-input-root {
+        font: inherit;
+        color: currentColor;
+        width: 100%;
+        border: 0;
+        height: 1.1em;
+        margin: 0;
+        display: block;
+        padding: 3px 6px 3px 6px;
+        min-width: 0;
+        font-size: 13px;
+        background: none;
+        position: relative;
+        box-sizing: content-box;
+        letter-spacing: inherit;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .mud-input-helper-text {
+        color: var(--mud-palette-text-secondary);
+        margin: 0;
+        font-size: .75rem;
+        text-align: start;
+        font-weight: 400;
+        line-height: 1.0;
+        letter-spacing: .03333em;
+        padding-inline: 5px;
+    }
+</style>
+<tr>
+    <td><MudText Typo="Typo.caption" Class="d-flex align-center me-1" Style="padding-top: 6px;">@Title</MudText></td>
+    <td><MudTimePicker Class="editable-textbox" Required="true" Placeholder="@Title" DisableUnderLine="true" /></td>
+</tr>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = default!;
+    [Parameter]
+    public string TitleIcon { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+    }
+
+}

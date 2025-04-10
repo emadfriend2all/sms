@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/29/2023 21:39:46" ReportInfo.Modified="12/23/2023 16:32:44" ReportInfo.CreatorVersion="2023.3.0.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+  } 
+}
+</ScriptText>
+  <Styles>
+    <Style Name="Title" Font="Calibri, 12pt, style=Bold"/>
+    <Style Name="Subtitle" Font="Calibri, 11pt, style=Bold"/>
+    <Style Name="Paragraph" Font="Calibri, 10pt"/>
+    <Style Name="TableCellNormal" Border.Lines="All" Border.Color="LightGray" Font="Calibri, 11pt"/>
+    <Style Name="TableCellBold" Border.Lines="All" Border.Color="LightGray" Font="Calibri, 11pt, style=Bold"/>
+    <Style Name="TableCellEvenNormal" Border.Lines="All" Border.Color="LightGray" Fill.Color="WhiteSmoke" Font="Calibri, 10pt"/>
+    <Style Name="TabelCellEvenBold" Fill.Color="WhiteSmoke" Font="Calibri, 11pt, style=Bold"/>
+    <Style Name="ParagraphBold" Font="Calibri, 10pt, style=Bold"/>
+  </Styles>
+  <Dictionary/>
+  <ReportPage Name="Page1" RawPaperSize="9" Watermark.Font="Arial, 60pt">
+    <PageHeaderBand Name="ReportPageHeader" Width="718.2" Height="151.2" CanGrow="true">
+      <PictureObject Name="HeaderImage" Width="718.2" Height="145.75" Dock="Top" Image=""/>
+    </PageHeaderBand>
+    <DataBand Name="Data2" Top="516.85" Width="718.2">
+      <DataHeaderBand Name="ContractHeader" Top="155.2" Width="718.2" Height="160.65">
+        <TextObject Name="PrintDateTxt" Left="396.9" Top="9.45" Width="255.15" Height="18.9" RightToLeft="true" Font="Calibri, 10pt" Style="Paragraph"/>
+        <TextObject Name="Text3" Left="75.6" Top="9.45" Width="66.15" Height="18.9" Text="عرض رقم:" HorzAlign="Right" RightToLeft="true" Font="Calibri, 11pt, style=Bold" Style="Subtitle"/>
+        <TextObject Name="Text37" Left="652.05" Top="9.45" Width="56.7" Height="18.9" Text="التاريخ :" HorzAlign="Right" RightToLeft="true" Font="Calibri, 11pt, style=Bold" Style="Subtitle"/>
+        <TextObject Name="Text103" Left="652.05" Top="37.8" Width="56.7" Height="18.9" Text="الموافق :" HorzAlign="Right" RightToLeft="true" Font="Calibri, 11pt, style=Bold" Style="Subtitle"/>
+        <TextObject Name="DocumentNumberTxt" Left="9.45" Top="9.45" Width="66.15" Height="18.9" Text="0" HorzAlign="Right" Font="Calibri, 11pt"/>
+        <TextObject Name="DateInHigriTxt" Left="396.9" Top="37.8" Width="255.15" Height="18.9" RightToLeft="true" Font="Calibri, 10pt" Style="Paragraph"/>
+        <ContainerObject Name="Container1" Left="9.45" Top="37.8" Width="132.3" Height="122.85">
+          <BarcodeObject Name="QRCodeObject" Width="132.3" Height="122.85" Dock="Fill" Anchor="Bottom, Left" ShowText="false" Barcode="QR Code" Barcode.Font="Arial, 11pt" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
+          <TextObject Name="DocumentNameTxt" Top="41.8" Width="699.3" Height="28.35" Text="عقد توريد وتركيب مصعد كهربائي" HorzAlign="Center" Font="Calibri, 16pt, style=Bold"/>
+        </ContainerObject>
+        <TextObject Name="ReferenceLabelTxt" Left="359.1" Top="113.4" Width="94.5" Height="18.9" Text="يتبع للعقد رقم:" HorzAlign="Right" RightToLeft="true" Font="Calibri, 11pt, style=Bold" Style="Subtitle"/>
+        <TextObject Name="ReferenceSerialNumberTxt" Left="292.95" Top="113.4" Width="66.15" Height="18.9" HorzAlign="Right" Font="Calibri, 11pt"/>
+        <ChildBand Name="CustomerNameHeaderChildBand" Top="319.85" Width="718.2" Height="18.9">
+          <TextObject Name="Text108" Left="623.7" Width="85.05" Height="18.9" Text=": إسم العميل" HorzAlign="Right" Font="Calibri, 12pt, style=Bold"/>
+          <TextObject Name="SecondPartyNameInHeaderTxt" Left="9.45" Width="623.7" Height="18.9" Text="شركة بازان الهندسية" HorzAlign="Right" Font="Calibri, 12pt, style=Bold"/>
+          <ChildBand Name="ContractHeaderPariesChildBand" Top="342.75" Width="718.2" Height="170.1">
+            <TextObject Name="Text104" Left="623.7" Top="90.5" Width="85.05" Height="18.9" Text=": يمثلها السيد" HorzAlign="Right" Font="Calibri, 11pt, style=Bold" Style="Subtitle"/>
+            <TextObject Name="OwnerNameTxt" Left="264.6" Top="90.5" Width="368.55" Height="18.9" HorzAlign="Right" Font="Calibri, 11pt, style=Underline" TextFill.Color="Brown"/>
+            <TextObject Name="FirstPartyOwnerTitleTxt" Left="9.45" Top="90.5" Width="160.65" Height="18.9" HorzAlign="Right" Font="Calibri, 11pt, style=Underline" TextFill.Color="Brown"/>
+            <TextObject Name="Text106" Left="170.1" Top="90.5" Width="56.7" Height="18.9" Text=": بصفته" HorzAlign="Right" Font="Calibri, 11pt, style=Bold" Style="Subtitle"/>
+            <TextObject Name="FirstPartyRegistrationNoTxt" Left="9.45" Top="66.15" Width="160.65" Height="18.9" HorzAlign="Right" Font="Calibri, 11pt, style=Underline" TextFill.Color="Brown"/>
+            <TextObject Name="Text7" Left="614.25" Top="66.15" Width="94.5" Height="18.9" Text=": مقرها الرئيسى" HorzAlign="Right" Font="Calibri, 11pt, style=Bold" Style="Subtitle"/>
+            <TextObject Name="FirstPartyAddressTxt" Left="264.6" Top="66.15" Width="359.1" Height="18.9" HorzAlign="Right" Font="Calibri, 11pt, style=Underline" TextFill.Color="Brown"/>
+            <TextObject Name="Text9" Left="170.1" Top="66.15" Width="85.05" Height="18.9" Text=": سجل تجاري" HorzAlign="Right" Font="Calibri, 11pt, style=Bold" Style="Subtitle"/>
+            <TextObject Name="Text6" Left="642.6" Top="37.8" Width="66.15" Height="18.9" Text=": طرف أول" HorzAlign="Right" Font="Calibri, 11pt, style=Bold, Underline"/>
+            <TextObject Name="FirstPartyNameTxt" Left="264.6" Top="37.8" Width="378" Height="18.9" HorzAlign="Right" Font="Calibri, 11pt, style=Underline" TextFill.Color="Brown"/>
+            <TableObject Name="Table1" Left="9.45" Top="141.75" Width="703.15" Height="18.9" AdjustSpannedCellsWidth="true">
+              <TableColumn Name="Column1" Width="120.43"/>
+              <TableColumn Name="Column2" Width="54.31"/>
+              <TableColumn Name="Column3" Width="139.22"/>
+              <TableColumn Name="Column4" Width="101.59"/>
+              <TableColumn Name="Column5" Width="217.35"/>
+              <TableColumn Name="Column6" Width="70.25"/>
+              <TableRow Name="Row1">
+                <TableCell Name="SecondPartyPhoneTxt" HorzAlign="Right" Font="Calibri, 10pt"/>
+                <TableCell Name="Cell9" Text=": جوال" Font="Calibri, 11pt, style=Bold"/>
+                <TableCell Name="SecondPartyIdTxt" Text="24532535345" HorzAlign="Right" Font="Calibri, 10pt"/>
+                <TableCell Name="SecondPartyIdLableTxt" Text=": سجل تجاري" Font="Calibri, 11pt, style=Bold"/>
+                <TableCell Name="SecondPartyAddressTxt" RightToLeft="true" Font="Calibri, 10pt"/>
+                <TableCell Name="Cell6" Text=": العنوان " HorzAlign="Right" Font="Calibri, 11pt, style=Bold"/>
+              </TableRow>
+            </TableObject>
+            <TextObject Name="Text12" Left="642.6" Top="113.4" Width="66.15" Height="18.9" Text=": طرف ثاني" HorzAlign="Right" Font="Calibri, 11pt, style=Bold, Underline"/>
+            <TextObject Name="SecondPartyNameTxt" Left="264.6" Top="113.4" Width="378" Height="18.9" HorzAlign="Right" Font="Calibri, 10pt" Style="Paragraph"/>
+            <TextObject Name="Text5" Left="264.6" Top="9.45" Width="444.15" Height="18.9" Text=": تم بعون الله تعالى الاتفاق بين كل من" HorzAlign="Right" Font="Calibri, 11pt"/>
+          </ChildBand>
+        </ChildBand>
+      </DataHeaderBand>
+    </DataBand>
+    <DataBand Name="FieldsDataBand" Top="520.85" Width="239.4" Height="28.35" CanGrow="true" Columns.Count="3" Columns.Layout="DownThenAcross" KeepTogether="true">
+      <TableObject Name="Table8" Left="10.6" Width="226.8" Height="28.35" Anchor="Top, Right" Border.Lines="All" Border.Color="LightGray" Layout="Wrapped">
+        <TableColumn Name="Column23" Width="94.5"/>
+        <TableColumn Name="Column24" Width="132.3"/>
+        <TableRow Name="Row10" Height="28.35">
+          <TableCell Name="FieldValueTxt" Border.Lines="All" Border.Color="LightGray" Fill.Color="WhiteSmoke" Text="FieldValueTxt" HorzAlign="Center" VertAlign="Center" Font="Calibri, 10pt" Style="TableCellEvenNormal"/>
+          <TableCell Name="FieldNameTxt" Text="FieldNameTxt" HorzAlign="Right" VertAlign="Center" Font="Calibri, 10pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <DataBand Name="SpecificationBand" Top="595" Width="718.2" Height="18.9" CanGrow="true">
+      <TableObject Name="Table9" Left="9.45" Width="699.34" Height="18.9" Border.Color="LightGray" GrowToBottom="true">
+        <TableColumn Name="Column25" MinWidth="548.1" MaxWidth="548.1" Width="548.1"/>
+        <TableColumn Name="Column26" Width="151.24"/>
+        <TableRow Name="SpecificationTable" MinHeight="18.9" MaxHeight="206.39" AutoSize="true">
+          <TableCell Name="DescriptionTxt" HorzAlign="Right" Font="Calibri, 10pt" Style="Paragraph"/>
+          <TableCell Name="NameTxt" HorzAlign="Right" Font="Calibri, 11pt, style=Bold" Style="Subtitle"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="BasicDataHeaderBand" Top="553.2" Width="718.2" Height="37.8">
+        <TextObject Name="DataHeaderTitle" Left="9.45" Top="12" Width="699.3" Height="18.9" Text="DataHeaderTitle" HorzAlign="Right" Font="Calibri, 11pt, style=Bold" Style="Subtitle"/>
+      </DataHeaderBand>
+    </DataBand>
+    <GroupHeaderBand Name="TermGroupHeader" Top="617.9" Width="718.2" Height="37.8" CanGrow="true" FirstRowStartsNewPage="true">
+      <TextObject Name="TermGroupTitleTxt" Left="9.45" Top="14.45" Width="680.4" Height="18.9" Text="GroupTitleTxt" RightToLeft="true" Font="Calibri, 11pt, style=Bold" Style="Subtitle"/>
+      <TextObject Name="GroupNumberTxt" Left="689.85" Top="14.45" Width="18.9" Height="18.9" Text="50" HorzAlign="Right" RightToLeft="true" Font="Calibri, 11pt, style=Bold" Style="Subtitle"/>
+      <DataBand Name="OuterTermDataBand" Top="659.7" Width="718.2" Height="18.9" CanGrow="true" FirstRowStartsNewPage="true" KeepTogether="true">
+        <TextObject Name="OuterTermText" Left="9.45" Width="670.95" Height="18.9" CanGrow="true" GrowToBottom="true" Duplicates="Clear" HorzAlign="Justify" RightToLeft="true" Font="Calibri, 10pt" TextRenderType="HtmlTags" Style="Paragraph"/>
+        <TextObject Name="OuterTermNumberTxt" Left="680.4" Width="28.35" Height="18.9" CanGrow="true" GrowToBottom="true" Text="98" Duplicates="Clear" HorzAlign="Right" RightToLeft="true" Font="Calibri, 10pt" Style="Paragraph"/>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="682.6" Width="718.2"/>
+    </GroupHeaderBand>
+    <DataBand Name="InstallmentsBand" Top="686.6" Width="718.2" Height="28.35" CanGrow="true">
+      <TableObject Name="Table10" Left="9.45" Width="697.41" Height="28.35" Anchor="Top, Right" Border.Lines="All" Border.Color="LightGray" GrowToBottom="true">
+        <TableColumn Name="Column27" MaxWidth="37.8" Width="35.91"/>
+        <TableColumn Name="Column28" MaxWidth="75.6" Width="73.71"/>
+        <TableColumn Name="Column29" Width="309.96"/>
+        <TableColumn Name="Column30" MaxWidth="75.6" Width="73.71"/>
+        <TableColumn Name="Column31" MaxWidth="204.12" Width="204.12"/>
+        <TableRow Name="Row12" Height="28.35">
+          <TableCell Name="Cell44" Border.Lines="All" Border.Color="LightGray" EvenStyle="TableCellEvenNormal" Text="ريال" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt"/>
+          <TableCell Name="InstallmentsPlanAmount" Border.Lines="All" Border.Color="LightGray" Fill.Color="WhiteSmoke" EvenStyle="TabelCellEvenBold" HorzAlign="Right" VertAlign="Center" Font="Calibri, 10pt, style=Bold"/>
+          <TableCell Name="InstallmentsPlanDescription" EvenStyle="TableCellEvenNormal" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt"/>
+          <TableCell Name="InstallmentsPlanPercentage" Fill.Color="WhiteSmoke" EvenStyle="TabelCellEvenBold" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+          <TableCell Name="InstallmentsPlanName" EvenStyle="TableCellEvenNormal" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt"/>
+        </TableRow>
+      </TableObject>
+      <DataFooterBand Name="AccountInfoDataFooter" Top="718.95" Width="718.2" Height="28.35">
+        <TableObject Name="Table11" Left="9.45" Width="697.41" Height="28.35" Border.Lines="All" Border.Color="LightGray">
+          <TableColumn Name="Column32" Width="697.41"/>
+          <TableRow Name="Row13" Height="28.35">
+            <TableCell Name="DataFooterText" EvenStyle="TableCellEvenNormal" Text="sfdgfdgfds" HorzAlign="Center" VertAlign="Center" RightToLeft="true" Font="Calibri, 11pt"/>
+          </TableRow>
+        </TableObject>
+      </DataFooterBand>
+    </DataBand>
+    <DataBand Name="InvoiceDataBand" Top="830.9" Width="718.2" Height="28.35">
+      <TableObject Name="Table15" Left="9.45" Width="697.41" Height="28.35" Anchor="Top, Right" Border.Lines="All" Border.Color="LightGray" GrowToBottom="true" PrintOnParent="true">
+        <TableColumn Name="Column47" MaxWidth="103.95" Width="103.95"/>
+        <TableColumn Name="Column82" Width="85.05"/>
+        <TableColumn Name="Column48" MaxWidth="396.9" Width="302.4"/>
+        <TableColumn Name="Column49" MaxWidth="56.7" Width="56.7"/>
+        <TableColumn Name="Column50" MaxWidth="75.6" Width="73.71"/>
+        <TableColumn Name="Column51" MaxWidth="75.6" Width="75.6"/>
+        <TableRow Name="Row19" Height="28.35">
+          <TableCell Name="ItemIdTxt" Border.Lines="All" Border.Color="LightGray" EvenStyle="TableCellEvenNormal" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt"/>
+          <TableCell Name="ItemDiscountTxt" Border.Lines="All" Border.Color="LightGray" Fill.Color="WhiteSmoke" HorzAlign="Center" Font="Calibri, 10pt" Style="TableCellEvenNormal"/>
+          <TableCell Name="PriceDescriptionTxt" Border.Lines="All" Border.Color="LightGray" EvenStyle="TabelCellEvenBold" Text="PriceDescriptionTxt" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt" Style="TableCellNormal"/>
+          <TableCell Name="QuantityTxt" Border.Lines="All" Border.Color="LightGray" Fill.Color="WhiteSmoke" EvenStyle="TableCellEvenNormal" Text="QuantityTxt" Format="Number" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Center" VertAlign="Center" Font="Calibri, 10pt" Style="TableCellEvenNormal"/>
+          <TableCell Name="UnitPriceTxt" Border.Lines="All" Border.Color="LightGray" EvenStyle="TabelCellEvenBold" Text="UnitPriceTxt" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt" Style="TableCellNormal"/>
+          <TableCell Name="ItemTotalTxt" Fill.Color="WhiteSmoke" EvenStyle="TableCellEvenNormal" Text="ItemTotalTxt" NullValue="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="InvoiceDataHeaderBand" Top="751.3" Width="718.2" Height="75.6" KeepWithData="true">
+        <TableObject Name="Table14" Left="9.45" Top="47.25" Width="697.41" Height="28.35" Anchor="Top, Right" Border.Lines="All" Border.Color="LightGray" GrowToBottom="true">
+          <TableColumn Name="Column42" MaxWidth="103.95" Width="103.95"/>
+          <TableColumn Name="Column81" Width="85.05"/>
+          <TableColumn Name="Column43" MaxWidth="396.9" Width="302.4"/>
+          <TableColumn Name="Column44" MaxWidth="56.7" Width="56.7"/>
+          <TableColumn Name="Column45" MaxWidth="75.6" Width="73.71"/>
+          <TableColumn Name="Column46" MaxWidth="75.6" Width="75.6"/>
+          <TableRow Name="Row18" Height="28.35">
+            <TableCell Name="Cell67" Border.Lines="All" Border.Color="LightGray" EvenStyle="TableCellEvenNormal" Text="الرقم" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+            <TableCell Name="Cell123" Fill.Color="WhiteSmoke" Text="نسبة الخصم" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold" Style="TabelCellEvenBold"/>
+            <TableCell Name="Cell68" Border.Lines="All" Border.Color="LightGray" EvenStyle="TabelCellEvenBold" Text="الصنف" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt, style=Bold" Style="TableCellBold"/>
+            <TableCell Name="Cell69" Fill.Color="WhiteSmoke" EvenStyle="TableCellEvenNormal" Text="الكمية" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold" Style="TabelCellEvenBold"/>
+            <TableCell Name="Cell70" Border.Lines="All" Border.Color="LightGray" EvenStyle="TabelCellEvenBold" Text="سعر الوحدة" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt, style=Bold" Style="TableCellBold"/>
+            <TableCell Name="Cell71" Fill.Color="WhiteSmoke" EvenStyle="TableCellEvenNormal" Text="المبلغ" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt, style=Bold" Style="TabelCellEvenBold"/>
+          </TableRow>
+        </TableObject>
+        <TextObject Name="InvoiceTitleTxt" Left="9.45" Top="18.9" Width="699.3" Height="18.9" Text="بناء علي المعاينة الفنية يجب تغيير القطع التالية للعمل بالكفائة المطلوبة" RightToLeft="true" Font="Calibri, 11pt"/>
+      </DataHeaderBand>
+      <DataFooterBand Name="InvoiceItemsFooterBand" Top="863.25" Width="718.2" Height="56.7">
+        <TableObject Name="Table21" Left="9.45" Width="697.41" Height="28.35" Anchor="Top, Right" Border.Lines="All" Border.Color="LightGray" GrowToBottom="true" PrintOnParent="true">
+          <TableColumn Name="Column71" MaxWidth="75.6" Width="75.6"/>
+          <TableColumn Name="Column72" MaxWidth="396.9" Width="396.9"/>
+          <TableColumn Name="Column73" MaxWidth="75.6" Width="75.6"/>
+          <TableColumn Name="Column74" MaxWidth="75.6" Width="73.71"/>
+          <TableColumn Name="Column75" MaxWidth="75.6" Width="75.6"/>
+          <TableRow Name="Row29" Height="28.35">
+            <TableCell Name="Cell110" Border.Lines="All" Border.Color="LightGray" EvenStyle="TableCellEvenNormal" Text="الإجمالي" VertAlign="Center" RightToLeft="true" Font="Calibri, 11pt" ColSpan="4"/>
+            <TableCell Name="Cell111" Border.Lines="All" Border.Color="LightGray" Fill.Color="WhiteSmoke" EvenStyle="TabelCellEvenBold" Text="الصنف" HorzAlign="Right" VertAlign="Center" Font="Calibri, 10pt, style=Bold"/>
+            <TableCell Name="Cell112" EvenStyle="TableCellEvenNormal" Text="الكمية" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt"/>
+            <TableCell Name="Cell113" Fill.Color="WhiteSmoke" EvenStyle="TabelCellEvenBold" Text="السعر" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+            <TableCell Name="TotalVatExTxt" Border.Lines="All" Border.Color="LightGray" Fill.Color="WhiteSmoke" EvenStyle="TableCellEvenNormal" Text="TotalVatExTxt" HorzAlign="Right" VertAlign="Center" Font="Calibri, 10pt, style=Bold"/>
+          </TableRow>
+        </TableObject>
+        <TableObject Name="DiscountTable" Left="9.45" Top="28.35" Width="697.41" Height="28.35" Anchor="Top, Right" Border.Lines="All" Border.Color="LightGray" GrowToBottom="true" PrintOnParent="true">
+          <TableColumn Name="Column76" MaxWidth="75.6" Width="75.6"/>
+          <TableColumn Name="Column77" MaxWidth="396.9" Width="396.9"/>
+          <TableColumn Name="Column78" MaxWidth="75.6" Width="75.6"/>
+          <TableColumn Name="Column79" MaxWidth="75.6" Width="73.71"/>
+          <TableColumn Name="Column80" MaxWidth="75.6" Width="75.6"/>
+          <TableRow Name="Row30" Height="28.35">
+            <TableCell Name="DiscountDescriptionTxt" Border.Lines="All" Border.Color="LightGray" EvenStyle="TableCellEvenNormal" Text="خصم " VertAlign="Center" RightToLeft="true" Font="Calibri, 11pt" ColSpan="4"/>
+            <TableCell Name="Cell115" Border.Lines="All" Border.Color="LightGray" Fill.Color="WhiteSmoke" EvenStyle="TabelCellEvenBold" Text="الصنف" HorzAlign="Right" VertAlign="Center" Font="Calibri, 10pt, style=Bold"/>
+            <TableCell Name="Cell116" EvenStyle="TableCellEvenNormal" Text="الكمية" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt"/>
+            <TableCell Name="Cell117" Fill.Color="WhiteSmoke" EvenStyle="TabelCellEvenBold" Text="السعر" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+            <TableCell Name="DiscountTxt" Border.Lines="All" Border.Color="LightGray" Fill.Color="WhiteSmoke" EvenStyle="TableCellEvenNormal" HorzAlign="Right" VertAlign="Center" Font="Calibri, 10pt, style=Bold"/>
+          </TableRow>
+        </TableObject>
+      </DataFooterBand>
+    </DataBand>
+    <DataBand Name="InvoiceٍServiceDataBand" Top="923.95" Width="718.2" Height="28.35" PrintIfDatasourceEmpty="true">
+      <TableObject Name="Table19" Left="9.45" Width="697.41" Height="28.35" Anchor="Top, Right" Border.Lines="All" Border.Color="LightGray" GrowToBottom="true" PrintOnParent="true">
+        <TableColumn Name="Column64" MaxWidth="75.6" Width="75.6"/>
+        <TableColumn Name="Column65" MaxWidth="396.9" Width="396.9"/>
+        <TableColumn Name="Column66" MaxWidth="75.6" Width="75.6"/>
+        <TableColumn Name="Column67" MaxWidth="75.6" Width="73.71"/>
+        <TableColumn Name="Column68" MaxWidth="75.6" Width="75.6"/>
+        <TableRow Name="Row27" Height="28.35">
+          <TableCell Name="ServiceNameTxt" Border.Lines="All" Border.Color="LightGray" EvenStyle="TableCellEvenNormal" Text="ServiceNameTxt" VertAlign="Center" RightToLeft="true" Font="Calibri, 11pt" ColSpan="4"/>
+          <TableCell Name="Cell107" Border.Lines="All" Border.Color="LightGray" Fill.Color="WhiteSmoke" EvenStyle="TabelCellEvenBold" Text="الصنف" HorzAlign="Right" VertAlign="Center" Font="Calibri, 10pt, style=Bold"/>
+          <TableCell Name="Cell108" EvenStyle="TableCellEvenNormal" Text="الكمية" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell109" Fill.Color="WhiteSmoke" EvenStyle="TabelCellEvenBold" Text="السعر" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+          <TableCell Name="ServicePriceTxt" Border.Lines="All" Border.Color="LightGray" Fill.Color="WhiteSmoke" EvenStyle="TableCellEvenNormal" Text="ServicePriceTxt" HorzAlign="Right" VertAlign="Center" Font="Calibri, 10pt" Style="TableCellEvenNormal"/>
+        </TableRow>
+      </TableObject>
+      <DataFooterBand Name="InvoiceDataFooterBand" Top="956.3" Width="718.2" Height="82.05" KeepWithData="true">
+        <TableObject Name="Table16" Left="9.45" Width="697.41" Height="56.7" Anchor="Top, Right" Border.Lines="All" Border.Color="LightGray" GrowToBottom="true" PrintOnParent="true">
+          <TableColumn Name="Column52" MaxWidth="75.6" Width="75.6"/>
+          <TableColumn Name="Column53" MaxWidth="434.7" Width="434.7"/>
+          <TableColumn Name="Column54" MaxWidth="75.6" Width="0"/>
+          <TableColumn Name="Column55" MaxWidth="111.51" Width="111.51"/>
+          <TableColumn Name="Column56" MaxWidth="75.6" Width="75.6"/>
+          <TableRow Name="Row21" MinHeight="28.35" Height="28.35">
+            <TableCell Name="VatDescriptionTxt" Border.Lines="All" Border.Color="LightGray" Text="ضريبة القيمة المضافة" RightToLeft="true" Font="Calibri, 11pt" Style="TableCellNormal" ColSpan="4"/>
+            <TableCell Name="Cell83" Font="Arial, 10pt"/>
+            <TableCell Name="Cell84" Font="Arial, 10pt"/>
+            <TableCell Name="Cell85" Font="Arial, 10pt"/>
+            <TableCell Name="VatTxt" Border.Lines="All" Border.Color="LightGray" Fill.Color="WhiteSmoke" Text="VatTxt" HorzAlign="Right" Font="Calibri, 10pt" Style="TableCellEvenNormal"/>
+          </TableRow>
+          <TableRow Name="Row22" MinHeight="28.35" Height="28.35">
+            <TableCell Name="AmountInWordsTxt" Border.Lines="Left, Top, Bottom" Border.Color="LightGray" Text="InvoiceFooterTxt" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt, style=Bold" ColSpan="2"/>
+            <TableCell Name="Cell88" Font="Arial, 10pt"/>
+            <TableCell Name="Cell89" Border.Lines="Right, Top, Bottom" Border.Color="LightGray" Text="إجمالي قيمة العرض" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt, style=Bold" ColSpan="2"/>
+            <TableCell Name="Cell90" Font="Arial, 10pt"/>
+            <TableCell Name="TotalInvoiceTxt" Fill.Color="WhiteSmoke" Text="TotalInvoiceTxt" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt, style=Bold" Style="TabelCellEvenBold"/>
+          </TableRow>
+        </TableObject>
+        <TextObject Name="InvoiceFooterTxt" Left="349.65" Top="63.15" Width="359.1" Height="18.9" Text="في حال موافقتكم يرجي تعميدنا بتحويل قيمة القطع علي حساب الشركة" HorzAlign="Right" Font="Calibri, 11pt" TextFill.Color=""/>
+        <TextObject Name="InvoiceAccountInfoTxt" Left="12.45" Top="62.7" Width="359.1" Height="18.9" RightToLeft="true" Font="Calibri, 11pt" TextFill.Color=""/>
+      </DataFooterBand>
+    </DataBand>
+    <DataBand Top="1093.6" Width="718.2">
+      <DataHeaderBand Name="TitleDataHeaderBand" Top="1042.35" Width="718.2" Height="47.25">
+        <TextObject Name="TitleTxt" Left="9.45" Top="9.45" Width="699.3" Height="28.35" HorzAlign="Center" Font="Calibri, 14pt, style=Bold"/>
+      </DataHeaderBand>
+    </DataBand>
+    <GroupHeaderBand Name="FormGroupHeader" Top="1097.6" Width="718.2" Height="28.35" KeepWithData="true" SortOrder="Descending">
+      <TextObject Name="FormNameTxt" Left="9.45" Top="4.45" Width="699.3" Height="18.9" Text="مواصفات الباب" HorzAlign="Right" Font="Calibri, 11pt, style=Bold"/>
+      <DataBand Name="FormFieldsDataBand" Top="1129.95" Width="238.14" Height="28.35" CanGrow="true" Columns.Count="3" Columns.Width="238.14" Columns.MinRowCount="3" KeepTogether="true">
+        <TableObject Name="Table20" Left="9.19" Width="226.8" Height="28.35" Border.Lines="All" Border.Color="LightGray" Layout="Wrapped">
+          <TableColumn Name="Column69" Width="94.5"/>
+          <TableColumn Name="Column70" Width="132.3"/>
+          <TableRow Name="Row28" Height="28.35">
+            <TableCell Name="FormFieldValueTxt" Fill.Color="WhiteSmoke" Text="FormFieldValueTxt" HorzAlign="Center" VertAlign="Center" Font="Calibri, 10pt"/>
+            <TableCell Name="FormFieldNameTxt" Text="FormFieldNameTxt" HorzAlign="Right" VertAlign="Center" Font="Calibri, 10pt, style=Bold"/>
+          </TableRow>
+        </TableObject>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter2" Top="1162.3" Width="718.2"/>
+    </GroupHeaderBand>
+    <DataBand Name="HirarchyDataBand" Top="1166.3" Width="718.2" Height="28.35">
+      <TextObject Name="HirarchyContentText" Left="9.45" Top="9.45" Width="699.3" Height="18.9" CanGrow="true" GrowToBottom="true" RightToLeft="true" Font="Calibri, 10pt" Style="Paragraph"/>
+    </DataBand>
+    <ReportSummaryBand Name="SignatureBand" Top="1198.65" Width="718.2" Height="141.75">
+      <TextObject Name="DescriptionText" Left="9.45" Top="9.45" Width="699.3" Height="18.9" CanGrow="true" GrowToBottom="true" Text="حرر هذا العقد من نسختين أصليتين لكل طرف نسخة للعمل بموجبها وعلى هذا تم الاتفاق وجرى التوقيع" RightToLeft="true" Font="Calibri, 10pt, style=Italic" TextFill.Color="SteelBlue"/>
+      <TableObject Name="Table12" Left="9.45" Top="28.35" Width="699.12" Height="103.95" Border.Lines="All" Border.Color="LightGray">
+        <TableColumn Name="Column33" Width="229.12"/>
+        <TableColumn Name="Column34" Width="120.44"/>
+        <TableColumn Name="Column35" Width="229.12"/>
+        <TableColumn Name="Column36" Width="120.44"/>
+        <TableRow Name="Row14" Height="25.2">
+          <TableCell Name="Cell50" Fill.Color="WhiteSmoke" Text="الطرف الثاني" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt, style=Bold" Style="TabelCellEvenBold" ColSpan="2"/>
+          <TableCell Name="Cell51" Font="Arial, 10pt"/>
+          <TableCell Name="Cell52" Fill.Color="WhiteSmoke" Text="الطرف الأول" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11pt, style=Bold" Style="TabelCellEvenBold" ColSpan="2"/>
+          <TableCell Name="Cell53" Font="Arial, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row15" Height="25.2">
+          <TableCell Name="SecondPartyName" Border.Lines="All" Border.Color="LightGray" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11.25pt" ColSpan="2"/>
+          <TableCell Name="Cell55" Font="Arial, 10pt"/>
+          <TableCell Name="FirstPartyName" Border.Lines="All" Border.Color="LightGray" HorzAlign="Right" VertAlign="Center" Font="Calibri, 11.25pt" ColSpan="2"/>
+          <TableCell Name="Cell57" Font="Arial, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row16" Height="53.55">
+          <TableCell Name="Cell58" Border.Lines="All" Border.Color="LightGray" Font="Calibri, 11pt" Style="TableCellNormal"/>
+          <TableCell Name="Cell59" Border.Lines="All" Border.Color="LightGray" Text="التوقيع" HorzAlign="Right" Font="Calibri, 11pt, style=Bold" Style="TableCellBold"/>
+          <TableCell Name="Cell60" Border.Lines="All" Border.Color="LightGray" Font="Calibri, 11pt" Style="TableCellNormal"/>
+          <TableCell Name="Cell61" Border.Lines="All" Border.Color="LightGray" Text="التوقيع" HorzAlign="Right" Font="Calibri, 11pt, style=Bold" Style="TableCellBold"/>
+        </TableRow>
+      </TableObject>
+    </ReportSummaryBand>
+    <PageFooterBand Name="PageFooter1" Top="1344.4" Width="718.2" Height="132.3">
+      <TextObject Name="Text76" Top="18.9" Width="718.2" Height="18.9" Text="[Page#]/[TotalPages#]" HorzAlign="Center" RightToLeft="true" Font="Arial, 10pt">
+        <Formats>
+          <GeneralFormat/>
+          <GeneralFormat/>
+        </Formats>
+      </TextObject>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

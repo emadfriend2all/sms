@@ -1,0 +1,44 @@
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using Microsoft.AspNetCore.Components.WebAssembly.Http
+@using Microsoft.Extensions.Configuration
+@using Microsoft.Extensions.DependencyInjection
+@using Microsoft.Extensions.Localization
+@using Microsoft.JSInterop
+@using Showmatics.Blazor.Client
+@using Showmatics.Blazor.Client.Shared
+@using Showmatics.Blazor.Client.Pages.Authentication
+@using Showmatics.Blazor.Client.Pages.Multitenancy
+@using Showmatics.Blazor.Client.Components.Common
+@using Showmatics.Blazor.Client.Components.EntityTable
+@using Showmatics.Blazor.Client.Components.EntityTable.WithAddEdit
+@using Showmatics.Blazor.Client.Components.Localization
+@using Showmatics.Blazor.Client.Components.Notifications
+@using Showmatics.Blazor.Client.Components.ThemeManager
+@using Showmatics.Blazor.Client.Infrastructure.ApiClient
+@using Showmatics.Blazor.Client.Infrastructure.Auth
+@using Showmatics.Blazor.Client.Infrastructure.Common
+@using Showmatics.Blazor.Client.Infrastructure.Notifications
+@using Showmatics.Blazor.Client.Infrastructure.Preferences
+@using Showmatics.Shared.Authorization
+@using Blazored.LocalStorage
+@using Mapster
+@using MediatR.Courier
+@using MudBlazor
+@using System.Reflection;
+@using System.Globalization;
+
+@attribute [Authorize]
+
+@inject NavigationManager Navigation
+@inject ISnackbar Snackbar
+@inject IDialogService DialogService
+@inject IConfiguration Config
+@inject IClientPreferenceManager ClientPreferences
