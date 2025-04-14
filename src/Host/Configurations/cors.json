@@ -1,7 +1,7 @@
 {
   "CorsSettings": {
     "Angular": "http://localhost:4200",
-    "Blazor": "https://www.showmatics.net;*",
+    "Blazor": "https://localhost;*",
     "React": "http://localhost:3000"
   }
 }

@@ -21,7 +21,7 @@
     },
     "Storage": {
       "StorageProvider": "mssql",
-      "ConnectionString": "Data Source=.;Initial Catalog=SSDB_New;User Id=sa;Password=P@ssw0rd;MultipleActiveResultSets=True;TrustServerCertificate=true",
+      "ConnectionString": "Data Source=.;Initial Catalog=SSDBsms;User Id=usersms;Password=usersms;MultipleActiveResultSets=True;TrustServerCertificate=true",
       "Options": {
         "CommandBatchMaxTimeout": "00:05:00",
         "QueuePollInterval": "00:00:01",

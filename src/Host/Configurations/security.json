@@ -13,8 +13,8 @@
       "key": "APIS0M3RAOIEN3CR3T!1!MAG1C!1!",
       "issuer": "MyApi.Identity",
       "Audience": "apiJwtAudiance234985",
-      "tokenExpirationInMinutes": 0,
-      "refreshTokenExpirationInDays": 0
+      "tokenExpirationInMinutes": 1051200,
+      "refreshTokenExpirationInDays": 3650
     },
     "AzureAd": {
       "Instance": "https://login.microsoftonline.com/",

@@ -23,8 +23,7 @@ public record BarqSendSmsCommand(string recipient, string sender_id, string type
 // Send SMS Response
 public record BarqSendSmsResponse(
     string? Status,
-    string? Message,
-    SmsData? Data
+    string? Message
 );
 
 public record SmsData(
