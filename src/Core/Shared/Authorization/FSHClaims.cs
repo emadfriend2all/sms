@@ -11,5 +11,5 @@ public static class FSHClaims
     public const string Expiration = "exp";
     public const string MemberId = "memberId";
     public const string TenantInfo = "tenantInfo";
-    public const string ApiToken = "api_token";
+    public const string IsApiToken = "is_api_token";
 }

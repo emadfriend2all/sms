@@ -132,11 +132,11 @@ internal partial class UserService : IUserService
         return user.Adapt<UserDetailsDto>();
     }
 
-    public async Task<UserDetailsDto> GetUserByApiToken(string token, CancellationToken cancellationToken)
+    public async Task<UserDetailsDto> GetUserByApiToken(string userId, string token, CancellationToken cancellationToken)
     {
         var user = await _userManager.Users
             .AsNoTracking()
-            .Where(u => u.ApiToken == token)
+            .Where(u => u.Id == userId && u.ApiToken == token)
             .FirstOrDefaultAsync(cancellationToken);
 
         _ = user ?? throw new NotFoundException("user not found");

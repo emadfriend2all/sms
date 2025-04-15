@@ -37,5 +37,5 @@ public interface IUserService : ITransientService
     Task<string> ResetPasswordAsync(ResetPasswordRequest request);
     Task ChangePasswordAsync(ChangePasswordRequest request, string userId);
     Task<bool> IsValidToken(string appToken, string userId);
-    Task<UserDetailsDto> GetUserByApiToken(string token, CancellationToken cancellationToken);
+    Task<UserDetailsDto> GetUserByApiToken(string userId, string token, CancellationToken cancellationToken);
 }

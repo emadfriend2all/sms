@@ -80,7 +80,6 @@ internal partial class UserService
                 ObjectId = principal.GetObjectId(),
                 FirstName = principal.FindFirstValue(ClaimTypes.GivenName),
                 LastName = principal.FindFirstValue(ClaimTypes.Surname),
-                ApiToken = principal.FindFirstValue(FSHClaims.ApiToken),
                 Email = email,
                 NormalizedEmail = email.ToUpperInvariant(),
                 UserName = username,

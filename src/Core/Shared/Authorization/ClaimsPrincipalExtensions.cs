@@ -29,7 +29,7 @@ public static class ClaimsPrincipalExtensions
     public static string? GetUserName(this ClaimsPrincipal principal)
        => principal.FindFirstValue(ClaimTypes.GivenName);
     public static string? GetApiToken(this ClaimsPrincipal principal)
-       => principal.FindFirstValue(FSHClaims.ApiToken);
+       => principal.FindFirstValue(FSHClaims.IsApiToken);
 
     public static string? GetImageUrl(this ClaimsPrincipal principal)
        => principal.FindFirstValue(FSHClaims.ImageUrl);

@@ -8,6 +8,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Showmatics.Application.Identity.Users;
+using Finbuckle.MultiTenant;
+using Showmatics.Infrastructure.Multitenancy;
+using Showmatics.Shared.Authorization;
+using Showmatics.Shared.Multitenancy;
+using System.Text.Json;
+using Mapster;
 
 namespace Showmatics.Infrastructure.Auth.Jwt;
 
@@ -69,12 +75,48 @@ public class AppAuthJWTAuthenticationHandler : JwtBearerHandler
         {
             try
             {
-                return await base.HandleAuthenticateAsync();
-                //var token = jwtHandler.ReadJwtToken(accessToken);
-                //if (token.Issuer == Options.TokenValidationParameters.ValidIssuer)
-                //{
-                //    return await base.HandleAuthenticateAsync();
-                //}
+                var jwt = jwtHandler.ReadJwtToken(accessToken);
+
+                string? tenantId = jwt.Claims.FirstOrDefault(c => c.Type == FSHClaims.Tenant)?.Value;
+                string? userId = jwt.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+                bool isApiToken = jwt.Claims.FirstOrDefault(c => c.Type == FSHClaims.IsApiToken)?.Value == "true";
+
+                if (!isApiToken)
+                {
+                    return await base.HandleAuthenticateAsync();
+                }
+
+                if (tenantId == null && userId == null)
+                {
+                    return AuthenticateResult.Fail("Invalid API Token");
+                }
+
+                Context.RequestServices.GetRequiredService<IMultiTenantContextAccessor>()
+                .MultiTenantContext = new MultiTenantContext<FSHTenantInfo>()
+                {
+                    TenantInfo = new FSHTenantInfo
+                    {
+                        Id = tenantId!
+                    }
+                };
+
+                var userService = Context.RequestServices.GetRequiredService<IUserService>();
+                var user = await userService.GetUserByApiToken(userId!, accessToken, CancellationToken.None);
+                if (user != null)
+                {
+                    var claims = new[]
+                    {
+                        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                        new(FSHClaims.Tenant, tenantId!),
+                    };
+
+                    var identity = new ClaimsIdentity(claims, Scheme.Name);
+                    var principal = new ClaimsPrincipal(identity);
+                    var ticket = new AuthenticationTicket(principal, Scheme.Name);
+
+                    return AuthenticateResult.Success(ticket);
+                }
+
             }
             catch
             {

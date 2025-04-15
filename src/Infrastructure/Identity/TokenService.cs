@@ -118,7 +118,8 @@ internal class TokenService : ITokenService
         {
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             new(ClaimTypes.NameIdentifier, user.Id),
-            new(FSHClaims.Tenant, _currentTenant!.Id)
+            new(FSHClaims.Tenant, _currentTenant!.Id),
+            new(FSHClaims.IsApiToken, "true")
         };
         user.ApiToken = GenerateEncryptedToken(GetSigningCredentials(), claims);
         await _userManager.UpdateAsync(user);
@@ -143,7 +144,7 @@ internal class TokenService : ITokenService
             new(ClaimTypes.Name, user.FirstName ?? string.Empty),
             new(ClaimTypes.Surname, user.LastName ?? string.Empty),
             new(FSHClaims.IpAddress, ipAddress),
-            new(FSHClaims.ApiToken, user.ApiToken ?? string.Empty),
+            new(FSHClaims.IsApiToken, "false"),
             new(FSHClaims.Tenant, _currentTenant!.Id),
             new(FSHClaims.ImageUrl, user.ImageUrl ?? string.Empty),
             new(ClaimTypes.MobilePhone, user.PhoneNumber ?? string.Empty),
