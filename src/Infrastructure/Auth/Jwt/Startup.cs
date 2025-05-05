@@ -46,18 +46,14 @@ internal static class Startup
 
 public class AppAuthJWTAuthenticationHandler : JwtBearerHandler
 {
-    private readonly IUserService _userService;
-
     public AppAuthJWTAuthenticationHandler(
         IOptionsMonitor<JwtBearerOptions> options,
         ILoggerFactory logger,
         UrlEncoder encoder,
         ISystemClock clock,
-        IUserService userService
-        )
+        IUserService userService)
         : base(options, logger, encoder, clock)
     {
-        _userService = userService;
     }
 
     protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
@@ -91,16 +87,27 @@ public class AppAuthJWTAuthenticationHandler : JwtBearerHandler
                     return AuthenticateResult.Fail("Invalid API Token");
                 }
 
-                Context.RequestServices.GetRequiredService<IMultiTenantContextAccessor>()
-                .MultiTenantContext = new MultiTenantContext<FSHTenantInfo>()
+                var scopeFactory = Request.HttpContext.RequestServices.GetRequiredService<IServiceScopeFactory>();
+                var scope = scopeFactory.CreateScope();
+
+                var tenantStore = scope.ServiceProvider.GetRequiredService<IMultiTenantStore<FSHTenantInfo>>();
+                var tenantInfo = await tenantStore.TryGetAsync(tenantId);
+                if (tenantInfo == null)
                 {
-                    TenantInfo = new FSHTenantInfo
-                    {
-                        Id = tenantId!
-                    }
+                    return AuthenticateResult.Fail("Tenant not found");
+                }
+
+                var tenantAccessor = scope.ServiceProvider.GetRequiredService<IMultiTenantContextAccessor>();
+                tenantAccessor.MultiTenantContext = new MultiTenantContext<FSHTenantInfo>
+                {
+                    TenantInfo = tenantInfo
                 };
 
-                var userService = Context.RequestServices.GetRequiredService<IUserService>();
+                var currentUserInitializer = scope.ServiceProvider.GetRequiredService<ICurrentUserInitializer>();
+                currentUserInitializer.SetCurrentUserId(userId!);
+
+                Request.HttpContext.RequestServices = scope.ServiceProvider;
+                var userService = Request.HttpContext.RequestServices.GetRequiredService<IUserService>();
                 var user = await userService.GetUserByApiToken(userId!, accessToken, CancellationToken.None);
                 if (user != null)
                 {
